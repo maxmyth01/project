@@ -23,7 +23,7 @@ printStatus #Should take two arguments, the guess that the user just made and th
 
 if __name__ == '__main__': 
     
-pickCode()
+pickCode():
     
 masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
 
