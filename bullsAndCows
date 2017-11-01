@@ -1,1 +1,34 @@
+#Max Low
+#11-1-17
+#bullsAndCows -- MASTERMIND W/Graphics
 
+# imports
+from ggame import *
+from random import randint
+
+#constants
+ROWS = 20
+COLS = 40
+CELL_SIZE = 20
+
+#colors
+yellow =Color(0xFFFF00,1)
+green = Color(0x00FF00,1)
+red = Color(0xFF0000,1)
+blue = Color(0x0000FF,1)
+
+pickCode  #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
+
+printStatus #Should take two arguments, the guess that the user just made and the code that they are trying to guess. The function should print out how many bulls and cows that guess has in comparison to the real code.
+
+if __name__ == '__main__': 
+    
+pickCode()
+    
+masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
+
+Sprite(masterGrid)
+    
+
+Useful detail - If you want to break the code into individual digits, you can do this:
+digit1, digit2, digit3, digit4 = list(code)
