@@ -17,13 +17,17 @@ green = Color(0x00FF00,1)
 red = Color(0xFF0000,1)
 blue = Color(0x0000FF,1)
 
-pickCode  #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
+pickCode():  #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
+digit1 = randint(1,4)
+digit2 = digit1
+if digit2 == digit1:
+    
 
 printStatus #Should take two arguments, the guess that the user just made and the code that they are trying to guess. The function should print out how many bulls and cows that guess has in comparison to the real code.
 
 if __name__ == '__main__': 
     
-pickCode():
+pickCode()
     
 masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
 
