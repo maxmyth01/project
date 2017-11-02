@@ -16,6 +16,7 @@ red = Color(0xFF0000,1)
 blue = Color(0x0000FF,1)
 green = Color(0x00FF00,1)
 yellow =Color(0xFFFF00,1)
+brown = Color(0xAA7C74,1)
 
 def pickCode():
 #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
