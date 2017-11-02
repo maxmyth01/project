@@ -66,7 +66,7 @@ def pickCode():
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
     Sprite(code1)
-    Sprite(code2,())
+    Sprite(code2,(0,0))
     Sprite(code3)
     Sprite(code4)
 
