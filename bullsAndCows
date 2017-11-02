@@ -18,9 +18,20 @@ red = Color(0xFF0000,1)
 blue = Color(0x0000FF,1)
 
 pickCode():  #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
-digit1 = randint(1,4)
-digit2 = digit1
-if digit2 == digit1:
+digit1 = 0
+digit2 = 0
+digit3 = 0
+digit4 = 0
+#this part makes sure no number repeats
+while digit1 == digit2 or digit2 == digit3 or digit3 == digit4 or digit4 == digit1
+    digit1 = randint(1,4)
+    digit2 = randint(1,4)
+    digit3 = randint(1,4) 
+    digit4 = randint(1,4)
+
+return (digit1, digit2, digit3, digit4)
+
+
     
 
 printStatus #Should take two arguments, the guess that the user just made and the code that they are trying to guess. The function should print out how many bulls and cows that guess has in comparison to the real code.
