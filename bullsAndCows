@@ -39,9 +39,9 @@ return (digit1, digit2, digit3, digit4)
 
 if __name__ == '__main__': 
     
-pickCode()
+pickCode():
     
 masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
 
 Sprite(masterGrid)
-    
+
