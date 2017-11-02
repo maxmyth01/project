@@ -31,38 +31,38 @@ def pickCode():
         digit4 = randint(1,4)
     if digit1 == 1:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit1 == 2
+    elif digit1 == 2:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit1 == 3
+    elif digit1 == 3:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit1 == 4
+    elif digit1 == 4:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
         
     if digit2 == 1:
         code2= RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit2 == 2
+    elif digit2 == 2:
         code2 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit2 == 3
+    elif digit2 == 3:
         code2 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit2 == 4
+    elif digit2 == 4:
         code2 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
     
     if digit3 == 1:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit3 == 2
+    elif digit3 == 2:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit3 == 3
+    elif digit3 == 3:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit3 == 4
+    elif digit3 == 4:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
     
     if digit4 == 1:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit4 == 2
+    elif digit4 == 2:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit4 == 3
+    elif digit4 == 3:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit4 == 4
+    elif digit4 == 4:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
     Sprite(code1)
