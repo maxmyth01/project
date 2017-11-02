@@ -12,10 +12,10 @@ COLS = 40
 CELL_SIZE = 20
 
 #colors
-yellow =Color(0xFFFF00,1)
-green = Color(0x00FF00,1)
 red = Color(0xFF0000,1)
 blue = Color(0x0000FF,1)
+green = Color(0x00FF00,1)
+yellow =Color(0xFFFF00,1)
 
 def pickCode():
 #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
@@ -29,6 +29,14 @@ def pickCode():
         digit2 = randint(1,4)
         digit3 = randint(1,4) 
         digit4 = randint(1,4)
+    if digit1 == 1:
+        code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),brown)
+    elif digit1 == 2
+        code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),brown)
+    elif digit1 == 2
+        code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),brown)
+    elif digit1 == 2
+        code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),brown)
 
 return (digit1, digit2, digit3, digit4)
 
