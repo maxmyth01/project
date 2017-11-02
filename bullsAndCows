@@ -7,9 +7,9 @@ from ggame import *
 from random import randint
 
 #constants
-ROWS = 20
-COLS = 40
-CELL_SIZE = 20
+ROWS = 11
+COLS = 4
+CELL_SIZE = 50
 
 #colors
 red = Color(0xFF0000,1)
