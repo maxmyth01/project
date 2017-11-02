@@ -65,7 +65,10 @@ def pickCode():
     elif digit4 == 4
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
-return (digit1, digit2, digit3, digit4)
+    Sprite(code1)
+    Sprite(code2,())
+    Sprite(code3)
+    Sprite(code4)
 
 
     
