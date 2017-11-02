@@ -17,7 +17,7 @@ green = Color(0x00FF00,1)
 red = Color(0xFF0000,1)
 blue = Color(0x0000FF,1)
 
-pickCode() 
+def pickCode():
 #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
 digit1 = 0
 digit2 = 0
