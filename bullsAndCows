@@ -19,16 +19,16 @@ blue = Color(0x0000FF,1)
 
 def pickCode():
 #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
-digit1 = 0
-digit2 = 0
-digit3 = 0
-digit4 = 0
+    digit1 = 0
+    digit2 = 0
+    digit3 = 0
+    digit4 = 0
 #this part makes sure no number repeats
-while digit1 == digit2 or digit2 == digit3 or digit3 == digit4 or digit4 == digit1
-    digit1 = randint(1,4)
-    digit2 = randint(1,4)
-    digit3 = randint(1,4) 
-    digit4 = randint(1,4)
+    while digit1 == digit2 or digit2 == digit3 or digit3 == digit4 or digit4 == digit1
+        digit1 = randint(1,4)
+        digit2 = randint(1,4)
+        digit3 = randint(1,4) 
+        digit4 = randint(1,4)
 
 return (digit1, digit2, digit3, digit4)
 
