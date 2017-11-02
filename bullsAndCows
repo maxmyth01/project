@@ -78,11 +78,12 @@ def pickCode():
 if __name__ == '__main__': 
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
+    Sprite(masterGrid)
     
     pickCode()
     
 
-    Sprite(masterGrid)
+    
     
     
     App().run()
