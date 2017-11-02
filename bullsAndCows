@@ -83,7 +83,7 @@ if __name__ == '__main__':
     data['digit3'] =0
     data['digit4'] =0
     
-    masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
+    masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
     pickCode()
