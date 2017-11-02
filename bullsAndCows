@@ -24,7 +24,7 @@ def pickCode():
     digit3 = 0
     digit4 = 0
 #this part makes sure no number repeats
-    while digit1 == digit2 or digit2 == digit3 or digit3 == digit4 or digit4 == digit1:
+    while digit1 == digit2 == digit3 == digit4:
         digit1 = randint(1,4)
         digit2 = randint(1,4)
         digit3 = randint(1,4) 
@@ -76,6 +76,11 @@ def pickCode():
 # printStatus() #Should take two arguments, the guess that the user just made and the code that they are trying to guess. The function should print out how many bulls and cows that guess has in comparison to the real code.
 
 if __name__ == '__main__': 
+    data = {}
+    data['digit1'] =0
+    data['digit2'] =0
+    data['digit3'] =0
+    data['digit4'] =0
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
     Sprite(masterGrid)
