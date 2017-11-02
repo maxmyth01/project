@@ -65,10 +65,10 @@ def pickCode():
     elif digit4 == 4:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
-    Sprite(code1)
-    Sprite(code2,(0,0))
-    Sprite(code3)
-    Sprite(code4)
+    Sprite(code1,(CELL_SIZE*1,0))
+    Sprite(code2,(CELL_SIZE*2,0))
+    Sprite(code3,(CELL_SIZE*3,0))
+    Sprite(code4,(CELL_SIZE*4,0))
 
 
     
@@ -77,7 +77,7 @@ def pickCode():
 
 if __name__ == '__main__': 
     
-    print(pickCode())
+    pickCode()
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,green),green)
 
