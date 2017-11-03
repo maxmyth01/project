@@ -88,6 +88,11 @@ if __name__ == '__main__':
     
     pickCode()
     
+    App.listenKeyEvent('keydown','r', red)
+    App.listenKeyEvent('keydown','b', blue)
+    App.listenKeyEvent('keydown','g', green)
+    App.listenKeyEvent('keydown','y', yellow)
+    App.listenKeyEvent('keydown','enter', confirm)
 
     
     
