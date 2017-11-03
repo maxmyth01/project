@@ -72,7 +72,13 @@ def pickCode():
     Sprite(code4,(CELL_SIZE*3,0))
     
 def red():
-    if column == 1
+    if column == 1: # need to account for exceeding 4
+    
+    elif column == 2:
+        
+    elif column == 3:
+        
+    elif column == 4:
 
 def blue():
     
