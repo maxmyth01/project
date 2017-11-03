@@ -70,7 +70,16 @@ def pickCode():
     Sprite(code2,(CELL_SIZE,0))
     Sprite(code3,(CELL_SIZE*2,0))
     Sprite(code4,(CELL_SIZE*3,0))
+    
+def enterCode:
 
+def checkCode:
+    cows =0
+    bulls =0
+    if digit1 = enter1:
+        bulls += 1
+        
+    if digit1 = enter2 or digit1 = enter3
 
     
 
@@ -83,16 +92,25 @@ if __name__ == '__main__':
     data['digit3'] =0
     data['digit4'] =0
     
+    data['enter1'] =0
+    data['enter2'] =0
+    data['enter3'] =0
+    data['enter4'] =0
+    
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
     pickCode()
     
+    while enter1 != digit1 or enter2 != digit2 or enter3 != digit3 or enter4 != digit4
+        enterCode()
     App.listenKeyEvent('keydown','r', red)
     App.listenKeyEvent('keydown','b', blue)
     App.listenKeyEvent('keydown','g', green)
     App.listenKeyEvent('keydown','y', yellow)
     App.listenKeyEvent('keydown','enter', confirm)
+    
+    
 
     
     
