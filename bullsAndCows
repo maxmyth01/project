@@ -72,14 +72,34 @@ def pickCode():
     Sprite(code4,(CELL_SIZE*3,0))
     
 def enterCode:
+    App.listenKeyEvent('keydown','r', red)
+    App.listenKeyEvent('keydown','b', blue)
+    App.listenKeyEvent('keydown','g', green)
+    App.listenKeyEvent('keydown','y', yellow)
+    App.listenKeyEvent('keydown','enter', confirm)
+    ### in here add something that check for repeats and doesn't allow
 
 def checkCode:
     cows =0
     bulls =0
     if digit1 = enter1:
         bulls += 1
+    elif digit2 = enter2:
+        bulls += 1
+    elif digit3 = enter3:
+        bulls += 1
+    elif digit4 = enter4:
+        bulls += 1
         
-    if digit1 = enter2 or digit1 = enter3
+    if digit1 = enter2 or digit1 = enter3 or digit1 = enter4:
+        cows += 1
+    elif digit2 = enter1 or digit2 = enter3 or digit2 = enter4:
+        cows += 1
+    elif digit3 = enter1 or digit3 = enter2 or digit3 = enter4:
+        cows += 1
+    elif digit4 = enter1 or digit4 = enter2 or digit4 = enter4:
+        cows += 1
+
 
     
 
@@ -97,18 +117,22 @@ if __name__ == '__main__':
     data['enter3'] =0
     data['enter4'] =0
     
+    data['cows'] =0
+    data['bulls'] =0
+    
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
     pickCode()
     
     while enter1 != digit1 or enter2 != digit2 or enter3 != digit3 or enter4 != digit4
-        enterCode()
-    App.listenKeyEvent('keydown','r', red)
-    App.listenKeyEvent('keydown','b', blue)
-    App.listenKeyEvent('keydown','g', green)
-    App.listenKeyEvent('keydown','y', yellow)
-    App.listenKeyEvent('keydown','enter', confirm)
+        if enterCode() == True:
+            if checkcode() == True:
+                print('YOU WIN!')
+            else:
+                print('Bulls:',bulls,'Cows:',cows)
+        
+    
     
     
 
