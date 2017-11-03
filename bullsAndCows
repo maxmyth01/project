@@ -71,7 +71,25 @@ def pickCode():
     Sprite(code3,(CELL_SIZE*2,0))
     Sprite(code4,(CELL_SIZE*3,0))
     
+def red():
+    if column == 1
+
+def blue():
+    
+def green():
+
+def yellow():
+    
+def confirm():
+    if enter1 != enter2 or enter1 != enter3 or enter1 != enter4 or enter2 != enter3 or enter2 != enter4 or enter3 != enter4:
+        return True
+    else:
+        Print('Invalid Code')
+
 def enterCode():
+    row = 0
+    column = 0 
+    
     App.listenKeyEvent('keydown','r', red)
     App.listenKeyEvent('keydown','b', blue)
     App.listenKeyEvent('keydown','g', green)
@@ -120,6 +138,9 @@ if __name__ == '__main__':
     data['enter3'] =0
     data['enter4'] =0
     
+    data['row'] =0
+    data['column'] =0
+    
     data['cows'] =0
     data['bulls'] =0
     
@@ -134,13 +155,11 @@ if __name__ == '__main__':
                 print('YOU WIN!')
             else:
                 print('Bulls:',bulls,'Cows:',cows)
+                #resets the entered code
+                enter1 = 0
+                enter2 = 0
+                enter3 = 0
+                enter4 = 0
         
-    
-    
-    
-
-    
-    
-    
     App().run()
 
