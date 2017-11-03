@@ -71,7 +71,7 @@ def pickCode():
     Sprite(code3,(CELL_SIZE*2,0))
     Sprite(code4,(CELL_SIZE*3,0))
     
-def enterCode:
+def enterCode():
     App.listenKeyEvent('keydown','r', red)
     App.listenKeyEvent('keydown','b', blue)
     App.listenKeyEvent('keydown','g', green)
@@ -79,7 +79,7 @@ def enterCode:
     App.listenKeyEvent('keydown','enter', confirm)
     ### in here add something that check for repeats and doesn't allow
 
-def checkCode:
+def checkCode():
     cows =0
     bulls =0
     if digit1 = enter1:
@@ -99,6 +99,9 @@ def checkCode:
         cows += 1
     elif digit4 = enter1 or digit4 = enter2 or digit4 = enter4:
         cows += 1
+    
+    if bulls == 4:
+        return True
 
 
     
