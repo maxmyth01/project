@@ -153,30 +153,30 @@ def enterCode():
     ### in here add something that check for repeats and doesn't allow
 
 def checkCode():
-    cows =0
-    bulls =0
+    data['cows'] =0
+    data['bulls'] =0
     # check for bulls
     if data['digit1'] == data['enter1']:
-        bulls += 1
+        data['bulls'] += 1
     elif data['digit2'] == data['enter2']:
-        bulls += 1
+        data['bulls'] += 1
     elif data['digit3'] == data['enter3']:
-        bulls += 1
+        data['bulls'] += 1
     elif data['digit4'] == data['enter4']:
-        bulls += 1
+        data['bulls'] += 1
         
     
     #check for cows    
     if data['digit1'] == data['enter2'] or data['digit1'] == data['enter3'] or data['digit1'] == data['enter4']:
-        cows += 1
+        data['cows'] += 1
     elif data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
-        cows += 1
+        data['cows'] += 1
     elif data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
-        cows += 1
+        data['cows'] += 1
     elif data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter4']:
-        cows += 1
+        data['cows'] += 1
     
-    if bulls == 4:
+    if data['bulls'] == 4:
         return True
 
 
@@ -212,7 +212,7 @@ if __name__ == '__main__':
             if checkcode() == True:
                 print('YOU WIN!')
             else:
-                print('Bulls:',bulls,'Cows:',cows)
+                print('Bulls:',data['bulls'],'Cows:',data['cows'])
                 #resets the entered code
                 data['enter1'] = 0
                 data['enter2'] = 0
