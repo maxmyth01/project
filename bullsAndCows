@@ -157,22 +157,22 @@ def enterCode():
 def checkCode():
     cows =0
     bulls =0
-    if digit1 = enter1:
+    if digit1 == enter1:
         bulls += 1
-    elif digit2 = enter2:
+    elif digit2 == enter2:
         bulls += 1
-    elif digit3 = enter3:
+    elif digit3 == enter3:
         bulls += 1
-    elif digit4 = enter4:
+    elif digit4 == enter4:
         bulls += 1
         
-    if digit1 = enter2 or digit1 = enter3 or digit1 = enter4:
+    if digit1 == enter2 or digit1 == enter3 or digit1 == enter4:
         cows += 1
-    elif digit2 = enter1 or digit2 = enter3 or digit2 = enter4:
+    elif digit2 == enter1 or digit2 == enter3 or digit2 == enter4:
         cows += 1
-    elif digit3 = enter1 or digit3 = enter2 or digit3 = enter4:
+    elif digit3 == enter1 or digit3 == enter2 or digit3 == enter4:
         cows += 1
-    elif digit4 = enter1 or digit4 = enter2 or digit4 = enter4:
+    elif digit4 == enter1 or digit4 == enter2 or digit4 == enter4:
         cows += 1
     
     if bulls == 4:
