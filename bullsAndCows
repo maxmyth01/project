@@ -21,15 +21,15 @@ brown = Color(0xAA7C74,1)
 def pickCode():
 #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
     data['digit1'] = 0
-    digit2 = 0
-    digit3 = 0
-    digit4 = 0
+    data['digit2'] = 0
+    data['digit3'] = 0
+    data['digit4'] = 0
 #this part makes sure no number repeats
-    while data['digit1'] == digit2 or data['digit1'] == digit3 or data['digit1'] == digit4 or digit2 == digit3 or  digit2 == digit4 or digit3 == digit4:
+    while data['digit1'] == data['digit2'] or data['digit1'] == data['digit3'] or data['digit1'] == data['digit4'] or data['digit2'] == data['digit3'] or  data['digit2'] == data['digit4'] or data['digit3'] == data['digit4']:
         data['digit1'] = randint(1,4)
-        digit2 = randint(1,4)
-        digit3 = randint(1,4) 
-        digit4 = randint(1,4)
+        data['digit2'] = randint(1,4)
+        data['digit3'] = randint(1,4) 
+        data['digit4'] = randint(1,4)
     if data['digit1'] == 1:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
     elif data['digit1'] == 2:
@@ -39,31 +39,31 @@ def pickCode():
     elif data['digit1'] == 4:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
         
-    if digit2 == 1:
+    if data['digit2'] == 1:
         code2= RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit2 == 2:
+    elif data['digit2'] == 2:
         code2 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit2 == 3:
+    elif data['digit2'] == 3:
         code2 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit2 == 4:
+    elif data['digit2'] == 4:
         code2 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
     
-    if digit3 == 1:
+    if data['digit3'] == 1:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit3 == 2:
+    elif data['digit3'] == 2:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit3 == 3:
+    elif data['digit3'] == 3:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit3 == 4:
+    elif data['digit3'] == 4:
         code3 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
     
-    if digit4 == 1:
+    if data['digit4'] == 1:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit4 == 2:
+    elif data['digit4'] == 2:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit4 == 3:
+    elif data['digit4'] == 3:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit4 == 4:
+    elif data['digit4'] == 4:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
     Sprite(code1,(0,0))
@@ -157,20 +157,20 @@ def checkCode():
     bulls =0
     if data['digit1'] == enter1:
         bulls += 1
-    elif digit2 == enter2:
+    elif data['digit2'] == enter2:
         bulls += 1
-    elif digit3 == enter3:
+    elif data['digit3'] == enter3:
         bulls += 1
-    elif digit4 == enter4:
+    elif data['digit4'] == enter4:
         bulls += 1
         
     if data['digit1'] == enter2 or data['digit1'] == enter3 or data['digit1'] == enter4:
         cows += 1
-    elif digit2 == enter1 or digit2 == enter3 or digit2 == enter4:
+    elif data['digit2'] == enter1 or data['digit2'] == enter3 or data['digit2'] == enter4:
         cows += 1
-    elif digit3 == enter1 or digit3 == enter2 or digit3 == enter4:
+    elif data['digit3'] == enter1 or data['digit3'] == enter2 or data['digit3'] == enter4:
         cows += 1
-    elif digit4 == enter1 or digit4 == enter2 or digit4 == enter4:
+    elif data['digit4'] == enter1 or data['digit4'] == enter2 or data['digit4'] == enter4:
         cows += 1
     
     if bulls == 4:
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     
     pickCode()
     
-    while enter1 != data['digit1'] or enter2 != digit2 or enter3 != digit3 or enter4 != digit4:
+    while enter1 != data['digit1'] or enter2 != data['digit2'] or enter3 != data['digit3'] or enter4 != data['digit4']:
         if enterCode() == True:
             if checkcode() == True:
                 print('YOU WIN!')
