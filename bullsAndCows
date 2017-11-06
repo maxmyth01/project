@@ -31,7 +31,7 @@ def pickCode():
         data['digit3'] = randint(1,4) 
         data['digit4'] = randint(1,4)
     if data['digit1'] == 1:
-        code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
+        code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,Color(0xFF0000,1)),Color(0xFF0000,1))
     elif data['digit1'] == 2:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
     elif data['digit1'] == 3:
