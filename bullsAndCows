@@ -75,71 +75,71 @@ def pickCode():
 def red():
     # if r is pressed puts a red square in the right spot
     rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    if column == 1 or column % 4 == 1: # need to account for exceeding 4
+    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
         data['enter1'] = 1
-        Sprite(rrectangle, (0,CELL_SIZE))
-    elif column == 2 or column % 4 == 2:
+        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+    elif data['column'] == 2 or data['column'] % 4 == 2:
         data['enter2'] = 1
-        Sprite(rrectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 3 or column % 4 == 3:
+        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+    elif data['column'] == 3 or data['column'] % 4 == 3:
         data['enter3'] = 1
-        Sprite(rrectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 4 or column % 4 == 4:
+        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+    elif data['column'] == 4 or data['column'] % 4 == 4:
         data['enter4'] = 1
-        Sprite(rrectangle, (CELL_SIZE,CELL_SIZE))
+        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
 def blue():
      # if b is pressed puts a blue square in the right spot
     brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    if column == 1 or column % 4 == 1: # need to account for exceeding 4
+    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
         data['enter1'] = 2
-        Sprite(brectangle, (0,CELL_SIZE))
-    elif column == 2 or column % 4 == 2:
+        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+    elif data['column'] == 2 or data['column'] % 4 == 2:
         data['enter2'] = 2
-        Sprite(brectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 3 or column % 4 == 3:
+        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE)*2)
+    elif data['column'] == 3 or data['column'] % 4 == 3:
         data['enter3'] = 2
-        Sprite(brectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 4 or column % 4 == 4:
+        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+    elif data['column'] == 4 or data['column'] % 4 == 4:
         data['enter4'] = 2
-        Sprite(brectangle, (CELL_SIZE,CELL_SIZE))
+        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     
 def green():
     # if g is pressed puts a green square in the right spot
     grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    if column == 1 or column % 4 == 1: # need to account for exceeding 4
+    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
         data['enter1'] = 3
-        Sprite(grectangle, (0,CELL_SIZE))
-    elif column == 2 or column % 4 == 2:
+        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+    elif data['column'] == 2 or data['column'] % 4 == 2:
         data['enter2'] = 3
-        Sprite(grectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 3 or column % 4 == 3:
+        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+    elif data['column'] == 3 or data['column'] % 4 == 3:
         data['enter3'] = 3
-        Sprite(grectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 4 or column % 4 == 4:
+        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+    elif data['column'] == 4 or data['column'] % 4 == 4:
         data['enter4'] = 3
-        Sprite(grectangle, (CELL_SIZE,CELL_SIZE))
+        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
 def yellow():
      # if y is pressed puts a blue square in the right spot
     yrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
-    if column == 1 or column % 4 == 1: # need to account for exceeding 4
+    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
         data['enter1'] = 4
-        Sprite(yrectangle, (0,CELL_SIZE))
-    elif column == 2 or column % 4 == 2:
+        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+    elif data['column'] == 2 or data['column'] % 4 == 2:
         data['enter2'] = 4
-        Sprite(yrectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 3 or column % 4 == 3:
+        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+    elif data['column'] == 3 or data['column'] % 4 == 3:
         data['enter3'] = 4
-        Sprite(yrectangle, (CELL_SIZE,CELL_SIZE))
-    elif column == 4 or column % 4 == 4:
+        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+    elif data['column'] == 4 or data['column'] % 4 == 4:
         data['enter4'] = 4
-        Sprite(yrectangle, (CELL_SIZE,CELL_SIZE))
+        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     
 def confirm():
     if data['enter1'] != data['enter2'] or data['enter1'] != data['enter3'] or data['enter1'] != enter4 or data['enter2'] != data['enter3'] or data['enter2'] != enter4 or data['enter3'] != enter4:
-        rows += 1
-        column = 1
+        data['row'] += 1
+        data['column'] = 1
         return True
     else:
         Print('Invalid Code')
