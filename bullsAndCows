@@ -20,23 +20,23 @@ brown = Color(0xAA7C74,1)
 
 def pickCode():
 #Should take no arguments. The function should return a random 4 digit code with none of the numbers repeated. Don't forget that 0 is a digit.
-    digit1 = 0
+    data['digit1'] = 0
     digit2 = 0
     digit3 = 0
     digit4 = 0
 #this part makes sure no number repeats
-    while digit1 == digit2 or digit1 == digit3 or digit1 == digit4 or digit2 == digit3 or  digit2 == digit4 or digit3 == digit4:
-        digit1 = randint(1,4)
+    while data['digit1'] == digit2 or data['digit1'] == digit3 or data['digit1'] == digit4 or digit2 == digit3 or  digit2 == digit4 or digit3 == digit4:
+        data['digit1'] = randint(1,4)
         digit2 = randint(1,4)
         digit3 = randint(1,4) 
         digit4 = randint(1,4)
-    if digit1 == 1:
+    if data['digit1'] == 1:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    elif digit1 == 2:
+    elif data['digit1'] == 2:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    elif digit1 == 3:
+    elif data['digit1'] == 3:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    elif digit1 == 4:
+    elif data['digit1'] == 4:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
         
     if digit2 == 1:
@@ -155,7 +155,7 @@ def enterCode():
 def checkCode():
     cows =0
     bulls =0
-    if digit1 == enter1:
+    if data['digit1'] == enter1:
         bulls += 1
     elif digit2 == enter2:
         bulls += 1
@@ -164,7 +164,7 @@ def checkCode():
     elif digit4 == enter4:
         bulls += 1
         
-    if digit1 == enter2 or digit1 == enter3 or digit1 == enter4:
+    if data['digit1'] == enter2 or data['digit1'] == enter3 or data['digit1'] == enter4:
         cows += 1
     elif digit2 == enter1 or digit2 == enter3 or digit2 == enter4:
         cows += 1
@@ -204,7 +204,7 @@ if __name__ == '__main__':
     
     pickCode()
     
-    while enter1 != digit1 or enter2 != digit2 or enter3 != digit3 or enter4 != digit4:
+    while enter1 != data['digit1'] or enter2 != digit2 or enter3 != digit3 or enter4 != digit4:
         if enterCode() == True:
             if checkcode() == True:
                 print('YOU WIN!')
