@@ -206,7 +206,7 @@ if __name__ == '__main__':
     
     pickCode()
     
-    while enter1 != digit1 or enter2 != digit2 or enter3 != digit3 or enter4 != digit4
+    while enter1 != digit1 or enter2 != digit2 or enter3 != digit3 or enter4 != digit4:
         if enterCode() == True:
             if checkcode() == True:
                 print('YOU WIN!')
