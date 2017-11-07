@@ -72,7 +72,7 @@ def pickCode():
     Sprite(code4,(CELL_SIZE*3,0))
     
 
-def red():
+def r():
     # if r is pressed puts a red square in the right spot
     rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -88,7 +88,7 @@ def red():
         data['enter4'] = 1
         Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
-def blue():
+def b():
      # if b is pressed puts a blue square in the right spot
     brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -104,7 +104,7 @@ def blue():
         data['enter4'] = 2
         Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     
-def green():
+def g():
     # if g is pressed puts a green square in the right spot
     grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -120,7 +120,7 @@ def green():
         data['enter4'] = 3
         Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
-def yellow():
+def y():
      # if y is pressed puts a blue square in the right spot
     yrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -145,10 +145,10 @@ def confirm():
         Print('Invalid Code')
 
 def enterCode():
-    App.listenKeyEvent('keydown','r', red)
-    App.listenKeyEvent('keydown','b', blue)
-    App.listenKeyEvent('keydown','g', green)
-    App.listenKeyEvent('keydown','y', yellow)
+    App.listenKeyEvent('keydown','r', r)
+    App.listenKeyEvent('keydown','b', b)
+    App.listenKeyEvent('keydown','g', g)
+    App.listenKeyEvent('keydown','y', y)
     App.listenKeyEvent('keydown','enter', confirm)
     ### in here add something that check for repeats and doesn't allow
 
