@@ -138,7 +138,7 @@ def enterColor(event):
 def checkCode(event):
     
     # checks for repeats and doesn't allow
-    if data['enter1'] != data['enter2'] or data['enter1'] != data['enter3'] or data['enter1'] != enter4 or data['enter2'] != data['enter3'] or data['enter2'] != enter4 or data['enter3'] != enter4:
+    if data['enter1'] != data['enter2'] or data['enter1'] != data['enter3'] or data['enter1'] != data['enter4'] or data['enter2'] != data['enter3'] or data['enter2'] != data['enter4'] or data['enter3'] != data['enter4']:
         data['row'] += 1
         data['column'] = 1
 
