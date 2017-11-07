@@ -146,11 +146,13 @@ def confirm():
     
 
 def enterCode():
-    App.listenKeyEvent('keydown','r', r)
-    App.listenKeyEvent('keydown','b', b)
-    App.listenKeyEvent('keydown','g', g)
-    App.listenKeyEvent('keydown','y', y)
-    App.listenKeyEvent('keydown','enter', confirm)
+    while True:
+        App.listenKeyEvent('keydown','r', r)
+        App.listenKeyEvent('keydown','b', b)
+        App.listenKeyEvent('keydown','g', g)
+        App.listenKeyEvent('keydown','y', y)
+        App.listenKeyEvent('keydown','enter', confirm)
+            
     ### in here add something that check for repeats and doesn't allow
 
 def checkCode():
