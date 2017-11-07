@@ -133,49 +133,40 @@ def enterColor(event):
             
 def checkCode():
     
-    
-    def confirm():
-    # check for repeats and doesn't allow
+    # checks for repeats and doesn't allow
     if data['enter1'] != data['enter2'] or data['enter1'] != data['enter3'] or data['enter1'] != enter4 or data['enter2'] != data['enter3'] or data['enter2'] != enter4 or data['enter3'] != enter4:
         data['row'] += 1
         data['column'] = 1
-        return True
-    else:
-        Print('Invalid Code')
-    
-    
-    
-    data['cows'] =0
-    data['bulls'] =0
-    # check for bulls
-    if data['digit1'] == data['enter1']:
-        data['bulls'] += 1
-    elif data['digit2'] == data['enter2']:
-        data['bulls'] += 1
-    elif data['digit3'] == data['enter3']:
-        data['bulls'] += 1
-    elif data['digit4'] == data['enter4']:
-        data['bulls'] += 1
+
+        data['cows'] =0
+        data['bulls'] =0
+        # check for bulls
+        if data['digit1'] == data['enter1']:
+            data['bulls'] += 1
+        elif data['digit2'] == data['enter2']:
+            data['bulls'] += 1
+        elif data['digit3'] == data['enter3']:
+            data['bulls'] += 1
+        elif data['digit4'] == data['enter4']:
+            data['bulls'] += 1
         
     
-    #check for cows    
-    if data['digit1'] == data['enter2'] or data['digit1'] == data['enter3'] or data['digit1'] == data['enter4']:
-        data['cows'] += 1
-    elif data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
-        data['cows'] += 1
-    elif data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
-        data['cows'] += 1
-    elif data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter4']:
-        data['cows'] += 1
+        #check for cows    
+        if data['digit1'] == data['enter2'] or data['digit1'] == data['enter3'] or data['digit1'] == data['enter4']:
+            data['cows'] += 1
+        elif data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
+            data['cows'] += 1
+        elif data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
+            data['cows'] += 1
+        elif data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter4']:
+            data['cows'] += 1
     
-    if data['bulls'] == 4:
-        return True
-
-
+        if data['bulls'] == 4:
+            return True
     
-
-# printStatus() #Should take two arguments, the guess that the user just made and the code that they are trying to guess. The function should print out how many bulls and cows that guess has in comparison to the real code.
-
+    else:
+        Print('Invalid Code')
+        
 if __name__ == '__main__': 
     data = {}
     data['digit1'] =0
