@@ -151,7 +151,8 @@ def enterCode():
         App.listenKeyEvent('keydown','b', b)
         App.listenKeyEvent('keydown','g', g)
         App.listenKeyEvent('keydown','y', y)
-        App.listenKeyEvent('keydown','enter', confirm)
+        if App.listenKeyEvent('keydown','enter', confirm) == True:
+            return True
             
     ### in here add something that check for repeats and doesn't allow
 
