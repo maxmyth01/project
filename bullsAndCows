@@ -131,7 +131,7 @@ def enterColor(event):
             Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
             
-def checkCode():
+def checkCode(event):
     
     # checks for repeats and doesn't allow
     if data['enter1'] != data['enter2'] or data['enter1'] != data['enter3'] or data['enter1'] != enter4 or data['enter2'] != data['enter3'] or data['enter2'] != enter4 or data['enter3'] != enter4:
