@@ -179,7 +179,7 @@ if __name__ == '__main__':
     data['enter3'] =0
     data['enter4'] =0
     
-    data['row'] =5
+    data['row'] =0
     data['column'] =1
     
     data['cows'] =0
