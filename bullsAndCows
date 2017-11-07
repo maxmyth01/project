@@ -73,7 +73,7 @@ def pickCode():
 
 def enterColor(event):
     if event == 'r':
-            rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
+        rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
         if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
             data['enter1'] = 1
             Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
@@ -87,7 +87,7 @@ def enterColor(event):
             data['enter4'] = 1
             Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     elif event == 'b':
-            brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
+        brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
         if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
             data['enter1'] = 2
             Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE))
@@ -101,7 +101,7 @@ def enterColor(event):
             data['enter4'] = 2
             Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     elif event == 'g':
-            grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
+        grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
         if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
             data['enter1'] = 3
             Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE))
