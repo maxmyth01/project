@@ -70,73 +70,72 @@ def pickCode():
     Sprite(code2,(CELL_SIZE,0))
     Sprite(code3,(CELL_SIZE*2,0))
     Sprite(code4,(CELL_SIZE*3,0))
-    
 
-def re():
-    # if r is pressed puts a red square in the right spot
-    rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-        data['enter1'] = 1
-        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
-    elif data['column'] == 2 or data['column'] % 4 == 2:
-        data['enter2'] = 1
-        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
-    elif data['column'] == 3 or data['column'] % 4 == 3:
-        data['enter3'] = 1
-        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-    elif data['column'] == 4 or data['column'] % 4 == 4:
-        data['enter4'] = 1
-        Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
+def enterColor(event):
+    if event == 'r':
+            rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
+        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+            data['enter1'] = 1
+            Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+        elif data['column'] == 2 or data['column'] % 4 == 2:
+            data['enter2'] = 1
+            Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+        elif data['column'] == 3 or data['column'] % 4 == 3:
+            data['enter3'] = 1
+            Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+        elif data['column'] == 4 or data['column'] % 4 == 4:
+            data['enter4'] = 1
+            Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
+    elif event == 'b':
+            brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
+        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+            data['enter1'] = 2
+            Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+        elif data['column'] == 2 or data['column'] % 4 == 2:
+            data['enter2'] = 2
+            Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE)*2)
+        elif data['column'] == 3 or data['column'] % 4 == 3:
+            data['enter3'] = 2
+            Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+        elif data['column'] == 4 or data['column'] % 4 == 4:
+            data['enter4'] = 2
+            Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
+    elif event == 'g':
+            grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
+        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+            data['enter1'] = 3
+            Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+        elif data['column'] == 2 or data['column'] % 4 == 2:
+            data['enter2'] = 3
+            Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+        elif data['column'] == 3 or data['column'] % 4 == 3:
+            data['enter3'] = 3
+            Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+        elif data['column'] == 4 or data['column'] % 4 == 4:
+            data['enter4'] = 3
+            Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
+    elif event == 'y':
+        # if y is pressed puts a blue square in the right spot
+        yrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
+        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+            data['enter1'] = 4
+            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+        elif data['column'] == 2 or data['column'] % 4 == 2:
+            data['enter2'] = 4
+            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+        elif data['column'] == 3 or data['column'] % 4 == 3:
+            data['enter3'] = 4
+            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+        elif data['column'] == 4 or data['column'] % 4 == 4:
+            data['enter4'] = 4
+            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
-def blu():
-     # if b is pressed puts a blue square in the right spot
-    brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-        data['enter1'] = 2
-        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE))
-    elif data['column'] == 2 or data['column'] % 4 == 2:
-        data['enter2'] = 2
-        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE)*2)
-    elif data['column'] == 3 or data['column'] % 4 == 3:
-        data['enter3'] = 2
-        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-    elif data['column'] == 4 or data['column'] % 4 == 4:
-        data['enter4'] = 2
-        Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
+            
+def checkCode():
     
-def gree():
-    # if g is pressed puts a green square in the right spot
-    grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-        data['enter1'] = 3
-        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE))
-    elif data['column'] == 2 or data['column'] % 4 == 2:
-        data['enter2'] = 3
-        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
-    elif data['column'] == 3 or data['column'] % 4 == 3:
-        data['enter3'] = 3
-        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-    elif data['column'] == 4 or data['column'] % 4 == 4:
-        data['enter4'] = 3
-        Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
-
-def yello():
-     # if y is pressed puts a blue square in the right spot
-    yrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
-    if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-        data['enter1'] = 4
-        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
-    elif data['column'] == 2 or data['column'] % 4 == 2:
-        data['enter2'] = 4
-        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
-    elif data['column'] == 3 or data['column'] % 4 == 3:
-        data['enter3'] = 4
-        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-    elif data['column'] == 4 or data['column'] % 4 == 4:
-        data['enter4'] = 4
-        Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     
-def confirm():
+    def confirm():
+    # check for repeats and doesn't allow
     if data['enter1'] != data['enter2'] or data['enter1'] != data['enter3'] or data['enter1'] != enter4 or data['enter2'] != data['enter3'] or data['enter2'] != enter4 or data['enter3'] != enter4:
         data['row'] += 1
         data['column'] = 1
@@ -144,19 +143,8 @@ def confirm():
     else:
         Print('Invalid Code')
     
-
-def enterCode():
-    while True:
-        App.listenKeyEvent('keydown','r', re)
-        App.listenKeyEvent('keydown','b', blu)
-        App.listenKeyEvent('keydown','g', gree)
-        App.listenKeyEvent('keydown','y', yello)
-        if App.listenKeyEvent('keydown','enter', confirm) == True:
-            return True
-            
-    ### in here add something that check for repeats and doesn't allow
-
-def checkCode():
+    
+    
     data['cows'] =0
     data['bulls'] =0
     # check for bulls
@@ -211,7 +199,15 @@ if __name__ == '__main__':
     
     pickCode()
     
-    while data['enter1'] != data['digit1'] or data['enter2'] != data['digit2'] or data['enter3'] != data['digit3'] or data['enter4'] != data['digit4']:
+    App.listenKeyEvent('keydown','r', enterColor('r'))
+    App.listenKeyEvent('keydown','b', enterColor('b'))
+    App.listenKeyEvent('keydown','g', enterColor('g'))
+    App.listenKeyEvent('keydown','y', enterColor('y'))
+    App.listenKeyEvent('keydown','enter', checkCode())
+    App().run()
+    
+    """
+        while data['enter1'] != data['digit1'] or data['enter2'] != data['digit2'] or data['enter3'] != data['digit3'] or data['enter4'] != data['digit4']:
         if enterCode() == True:
             if checkcode() == True:
                 print('YOU WIN!')
@@ -222,6 +218,10 @@ if __name__ == '__main__':
                 data['enter2'] = 0
                 data['enter3'] = 0
                 data['enter4'] = 0
-        
-    App().run()
+                
+    
+        if App.listenKeyEvent('keydown','enter', confirm) == True:
+            return True
+    
+    """
 
