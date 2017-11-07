@@ -72,7 +72,7 @@ def pickCode():
     Sprite(code4,(CELL_SIZE*3,0))
     
 
-def r():
+def re():
     # if r is pressed puts a red square in the right spot
     rrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -88,7 +88,7 @@ def r():
         data['enter4'] = 1
         Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
-def b():
+def blu():
      # if b is pressed puts a blue square in the right spot
     brectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -104,7 +104,7 @@ def b():
         data['enter4'] = 2
         Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     
-def g():
+def gree():
     # if g is pressed puts a green square in the right spot
     grectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -120,7 +120,7 @@ def g():
         data['enter4'] = 3
         Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
-def y():
+def yello():
      # if y is pressed puts a blue square in the right spot
     yrectangle == RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
     if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -147,10 +147,10 @@ def confirm():
 
 def enterCode():
     while True:
-        App.listenKeyEvent('keydown','r', r)
-        App.listenKeyEvent('keydown','b', b)
-        App.listenKeyEvent('keydown','g', g)
-        App.listenKeyEvent('keydown','y', y)
+        App.listenKeyEvent('keydown','r', re)
+        App.listenKeyEvent('keydown','b', blu)
+        App.listenKeyEvent('keydown','g', gree)
+        App.listenKeyEvent('keydown','y', yello)
         if App.listenKeyEvent('keydown','enter', confirm) == True:
             return True
             
