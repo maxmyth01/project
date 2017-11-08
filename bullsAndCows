@@ -101,7 +101,7 @@ def enterColor(event):
             Sprite(brectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
         elif data['column'] == 4 or data['column'] % 4 == 0:
             data['enter4'] = 2
-            Sprite(brectangle, (CELL_SIZE*4,CELL_SIZE**data['row']))
+            Sprite(brectangle, (CELL_SIZE*4,CELL_SIZE*data['row']))
     elif event.key == 'g':
         data['column'] += 1
         grectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
