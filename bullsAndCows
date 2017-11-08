@@ -167,7 +167,8 @@ def checkCode(event):
     
         if data['bulls'] == 4:
             return True
-    
+        
+        print('Bulls:',data['bulls'],'Cows:',data['cows'])
     else:
         print('Invalid Code')
         
