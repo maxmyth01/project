@@ -142,6 +142,10 @@ def checkCode(event):
         data['row'] += 1
         data['column'] = 1
         
+        # reset bulls and cows
+        data['cows'] =0
+        data['bulls'] =0
+        
         # check for bulls
         if data['digit1'] == data['enter1']:
             data['bulls'] += 1
@@ -169,10 +173,6 @@ def checkCode(event):
             print('YOU WIN!')
     else:
         print('Invalid Code')
-        
-          # reset bulls and cows
-        data['cows'] =0
-        data['bulls'] =0
         
 if __name__ == '__main__': 
     data = {}
