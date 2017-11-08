@@ -147,22 +147,22 @@ def checkCode(event):
         # check for bulls
         if data['digit1'] == data['enter1']:
             data['bulls'] += 1
-        elif data['digit2'] == data['enter2']:
+        if data['digit2'] == data['enter2']:
             data['bulls'] += 1
-        elif data['digit3'] == data['enter3']:
+        if data['digit3'] == data['enter3']:
             data['bulls'] += 1
-        elif data['digit4'] == data['enter4']:
+        if data['digit4'] == data['enter4']:
             data['bulls'] += 1
         
     
         #check for cows    
         if data['digit1'] == data['enter2'] or data['digit1'] == data['enter3'] or data['digit1'] == data['enter4']:
             data['cows'] += 1
-        elif data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
+        if data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
             data['cows'] += 1
-        elif data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
+        if data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
             data['cows'] += 1
-        elif data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter4']:
+        if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter4']:
             data['cows'] += 1
     
         if data['bulls'] == 4:
