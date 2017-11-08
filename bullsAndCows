@@ -162,7 +162,7 @@ def checkCode(event):
             data['cows'] += 1
         if data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
             data['cows'] += 1
-        if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter4']:
+        if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
             data['cows'] += 1
     
         if data['bulls'] == 4:
