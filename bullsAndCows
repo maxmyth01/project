@@ -66,10 +66,13 @@ def pickCode():
     elif data['digit4'] == 4:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
+    #hide = RectangleAsset(CELL_SIZE*4,CELL_SIZE,LineStyle(1,brown),brown)
+    
     Sprite(code1,(0,0))
     Sprite(code2,(CELL_SIZE,0))
     Sprite(code3,(CELL_SIZE*2,0))
     Sprite(code4,(CELL_SIZE*3,0))
+    #Sprite(hide)
 
 def enterColor(event):
     if event.key == 'r':
