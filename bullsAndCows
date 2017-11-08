@@ -123,16 +123,16 @@ def enterColor(event):
         yrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
         if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
             data['enter1'] = 4
-            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE))
+            Sprite(yrectangle, (0,CELL_SIZE*data['row']))
         elif data['column'] == 2 or data['column'] % 4 == 2:
             data['enter2'] = 4
-            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*2))
+            Sprite(yrectangle, (CELL_SIZE,CELL_SIZE*data['row']))
         elif data['column'] == 3 or data['column'] % 4 == 3:
             data['enter3'] = 4
-            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
+            Sprite(yrectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
         elif data['column'] == 4 or data['column'] % 4 == 0:
             data['enter4'] = 4
-            Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
+            Sprite(yrectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
 
             
 def checkCode(event):
