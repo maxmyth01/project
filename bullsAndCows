@@ -196,7 +196,7 @@ if __name__ == '__main__':
     Sprite(masterGrid)
     
 
-    if checkCode(event) == True:
+    if data['bulls'] =4:
         print('YOU WIN!')
     
     App.listenKeyEvent('keydown','r', enterColor)
