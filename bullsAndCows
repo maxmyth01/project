@@ -206,24 +206,3 @@ if __name__ == '__main__':
     App.listenKeyEvent('keydown','y', enterColor)
     App.listenKeyEvent('keydown','enter', checkCode)
     App().run()
-    
-    
-    """
-        while data['enter1'] != data['digit1'] or data['enter2'] != data['digit2'] or data['enter3'] != data['digit3'] or data['enter4'] != data['digit4']:
-        if enterCode() == True:
-            if checkcode() == True:
-                print('YOU WIN!')
-            else:
-                print('Bulls:',data['bulls'],'Cows:',data['cows'])
-                #resets the entered code
-                data['enter1'] = 0
-                data['enter2'] = 0
-                data['enter3'] = 0
-                data['enter4'] = 0
-                
-    
-        if App.listenKeyEvent('keydown','enter', confirm) == True:
-            return True
-    
-    """
-
