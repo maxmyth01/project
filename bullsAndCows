@@ -169,7 +169,7 @@ def checkCode(event):
             return True
     
     else:
-        Print('Invalid Code')
+        print('Invalid Code')
         
 if __name__ == '__main__': 
     data = {}
