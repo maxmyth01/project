@@ -195,12 +195,16 @@ if __name__ == '__main__':
     
     pickCode()
     
+    if checkCode == True:
+        print(YOU WIN!)
+    
     App.listenKeyEvent('keydown','r', enterColor)
     App.listenKeyEvent('keydown','b', enterColor)
     App.listenKeyEvent('keydown','g', enterColor)
     App.listenKeyEvent('keydown','y', enterColor)
     App.listenKeyEvent('keydown','enter', checkCode)
     App().run()
+    
     
     """
         while data['enter1'] != data['digit1'] or data['enter2'] != data['digit2'] or data['enter3'] != data['digit3'] or data['enter4'] != data['digit4']:
