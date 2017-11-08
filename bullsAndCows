@@ -164,14 +164,15 @@ def checkCode(event):
             data['cows'] += 1
         
         print('Bulls:',data['bulls'],'Cows:',data['cows'])
-        # reset bulls and cows
-        data['cows'] =0
-        data['bulls'] =0
         
         if data['bulls'] == 4:
             print('YOU WIN!')
     else:
         print('Invalid Code')
+        
+          # reset bulls and cows
+        data['cows'] =0
+        data['bulls'] =0
         
 if __name__ == '__main__': 
     data = {}
