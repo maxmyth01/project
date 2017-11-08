@@ -190,8 +190,9 @@ if __name__ == '__main__':
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
-
-    if data['bulls'] ==4:
+    pickCode()
+    
+    if data['bulls'] == 4:
         print('YOU WIN!')
     
     App.listenKeyEvent('keydown','r', enterColor)
