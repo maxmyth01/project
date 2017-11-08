@@ -166,6 +166,9 @@ def checkCode(event):
             data['cows'] += 1
         
         print('Bulls:',data['bulls'],'Cows:',data['cows'])
+        
+        if data['bulls'] == 4:
+            print('YOU WIN!')
     else:
         print('Invalid Code')
         
@@ -191,9 +194,6 @@ if __name__ == '__main__':
     Sprite(masterGrid)
     
     pickCode()
-    
-    if data['bulls'] == 4:
-        print('YOU WIN!')
     
     App.listenKeyEvent('keydown','r', enterColor)
     App.listenKeyEvent('keydown','b', enterColor)
