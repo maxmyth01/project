@@ -196,7 +196,7 @@ if __name__ == '__main__':
     pickCode()
     
     if checkCode == True:
-        print(YOU WIN!)
+        print('YOU WIN!')
     
     App.listenKeyEvent('keydown','r', enterColor)
     App.listenKeyEvent('keydown','b', enterColor)
