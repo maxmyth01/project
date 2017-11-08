@@ -164,11 +164,6 @@ def checkCode(event):
             data['cows'] += 1
         if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
             data['cows'] += 1
-    
-        if data['bulls'] == 4:
-            return True
-        else:
-            return False
         
         print('Bulls:',data['bulls'],'Cows:',data['cows'])
     else:
@@ -196,7 +191,7 @@ if __name__ == '__main__':
     Sprite(masterGrid)
     
 
-    if data['bulls'] =4:
+    if data['bulls'] ==4:
         print('YOU WIN!')
     
     App.listenKeyEvent('keydown','r', enterColor)
