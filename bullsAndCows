@@ -141,9 +141,7 @@ def checkCode(event):
     if data['enter1'] != data['enter2'] and data['enter1'] != data['enter3'] and data['enter1'] != data['enter4'] and data['enter2'] != data['enter3'] and data['enter2'] != data['enter4'] and data['enter3'] != data['enter4']:
         data['row'] += 1
         data['column'] = 1
-
-        data['cows'] =0
-        data['bulls'] =0
+        
         # check for bulls
         if data['digit1'] == data['enter1']:
             data['bulls'] += 1
@@ -166,6 +164,9 @@ def checkCode(event):
             data['cows'] += 1
         
         print('Bulls:',data['bulls'],'Cows:',data['cows'])
+        # reset bulls and cows
+        data['cows'] =0
+        data['bulls'] =0
         
         if data['bulls'] == 4:
             print('YOU WIN!')
