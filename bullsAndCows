@@ -167,6 +167,8 @@ def checkCode(event):
     
         if data['bulls'] == 4:
             return True
+        else
+            return False
         
         print('Bulls:',data['bulls'],'Cows:',data['cows'])
     else:
@@ -193,7 +195,7 @@ if __name__ == '__main__':
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
-    checkCode = False
+
     if checkCode() == True:
         print('YOU WIN!')
     
