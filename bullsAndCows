@@ -84,7 +84,7 @@ def enterColor(event):
         elif data['column'] == 3 or data['column'] % 4 == 3:
             data['enter3'] = 1
             Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-        elif data['column'] == 4 or data['column'] % 4 == 4:
+        elif data['column'] == 4 or data['column'] % 4 == 0:
             data['enter4'] = 1
             Sprite(rrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     elif event.key == 'b':
@@ -99,7 +99,7 @@ def enterColor(event):
         elif data['column'] == 3 or data['column'] % 4 == 3:
             data['enter3'] = 2
             Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-        elif data['column'] == 4 or data['column'] % 4 == 4:
+        elif data['column'] == 4 or data['column'] % 4 == 0:
             data['enter4'] = 2
             Sprite(brectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     elif event.key == 'g':
@@ -114,7 +114,7 @@ def enterColor(event):
         elif data['column'] == 3 or data['column'] % 4 == 3:
             data['enter3'] = 3
             Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-        elif data['column'] == 4 or data['column'] % 4 == 4:
+        elif data['column'] == 4 or data['column'] % 4 == 0:
             data['enter4'] = 3
             Sprite(grectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
     elif event.key == 'y':
@@ -130,7 +130,7 @@ def enterColor(event):
         elif data['column'] == 3 or data['column'] % 4 == 3:
             data['enter3'] = 4
             Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*3))
-        elif data['column'] == 4 or data['column'] % 4 == 4:
+        elif data['column'] == 4 or data['column'] % 4 == 0:
             data['enter4'] = 4
             Sprite(yrectangle, (CELL_SIZE*data['row'],CELL_SIZE*4))
 
