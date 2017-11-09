@@ -173,8 +173,13 @@ def checkCode(event):
         print('Bulls:',data['bulls'],'Cows:',data['cows'])
         
         if data['bulls'] == 4:
-            data['gameover'] = True
+            Sprite(data['Gameover_text'],(200,200))
+            data['hide'].destroy()
             print('YOU WIN!')
+        if data['row'] > 11
+            Sprite(data['Gameover_text'],(200,200))
+            data['hide'].destroy()
+            
     else:
         print('Invalid Code')
         
@@ -195,23 +200,19 @@ if __name__ == '__main__':
     
     data['cows'] =0
     data['bulls'] =0
-    data['gameover'] = False
-    Gameover_text = TextAsset('Gameover',fill=green,style='bold 40pt Times')
+    data['Gameover_text'] = TextAsset('Gameover',fill=green,style='bold 40pt Times')
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
     pickCode()
     
-    if data['gameover'] == False:
-        App.listenKeyEvent('keydown','r', enterColor)
-        App.listenKeyEvent('keydown','b', enterColor)
-        App.listenKeyEvent('keydown','g', enterColor)
-        App.listenKeyEvent('keydown','y', enterColor)
-        App.listenKeyEvent('keydown','enter', checkCode)
-    elif data['gameover'] == true or data['row'] > 11:
-        Sprite(Gameover_text,(200,200))
-        data['hide'].destroy()
+    App.listenKeyEvent('keydown','r', enterColor)
+    App.listenKeyEvent('keydown','b', enterColor)
+    App.listenKeyEvent('keydown','g', enterColor)
+    App.listenKeyEvent('keydown','y', enterColor)
+    App.listenKeyEvent('keydown','enter', checkCode)
+
         
-        App().run()
+    App().run()
     
