@@ -171,9 +171,9 @@ def checkCode(event):
             data['cows'] += 1
         
         bull/cow = ('Bulls:',data['bulls'],'Cows:',data['cows'])
-        data['bulls/cows'] = TextAsset(bull/cow,fill=red,style='bold 40pt Times')
+        data['bulls/cows'] = TextAsset(bull/cow,fill=brown,style='bold 40pt Times')
         
-        Sprite(data['bulls/cows'],fill=brown,style='bold 40pt Times',(CELL_SIZE*5,CELL_SIZE*rows))
+        Sprite(data['bulls/cows'],(CELL_SIZE*5,CELL_SIZE*rows))
         
         if data['bulls'] == 4:
             Sprite(data['Gameover_text'],(200,200))
