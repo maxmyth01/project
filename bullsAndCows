@@ -200,10 +200,10 @@ if __name__ == '__main__':
     Sprite(masterGrid)
     
     pickCode()
-    while data['gameover'] == False:
-        App.listenKeyEvent('keydown','r', enterColor)
-        App.listenKeyEvent('keydown','b', enterColor)
-        App.listenKeyEvent('keydown','g', enterColor)
-        App.listenKeyEvent('keydown','y', enterColor)
-        App.listenKeyEvent('keydown','enter', checkCode)
-        App().run()
+    
+    App.listenKeyEvent('keydown','r', enterColor)
+    App.listenKeyEvent('keydown','b', enterColor)
+    App.listenKeyEvent('keydown','g', enterColor)
+    App.listenKeyEvent('keydown','y', enterColor)
+    App.listenKeyEvent('keydown','enter', checkCode)
+    App().run()
