@@ -203,14 +203,15 @@ if __name__ == '__main__':
     
     pickCode()
     
-    if data['gameover'] == False:
-        App.listenKeyEvent('keydown','r', enterColor)
-        App.listenKeyEvent('keydown','b', enterColor)
-        App.listenKeyEvent('keydown','g', enterColor)
-        App.listenKeyEvent('keydown','y', enterColor)
-        App.listenKeyEvent('keydown','enter', checkCode)
-    elif data['gameover'] == true or data['row'] > 11:
-        Sprite(Gameover_text,(200,200))
+    while True:
+        if data['gameover'] == False:
+            App.listenKeyEvent('keydown','r', enterColor)
+            App.listenKeyEvent('keydown','b', enterColor)
+            App.listenKeyEvent('keydown','g', enterColor)
+            App.listenKeyEvent('keydown','y', enterColor)
+            App.listenKeyEvent('keydown','enter', checkCode)
+        elif data['gameover'] == true or data['row'] > 11:
+            Sprite(Gameover_text,(200,200))
         
-    App().run()
+        App().run()
     
