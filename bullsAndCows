@@ -202,13 +202,15 @@ if __name__ == '__main__':
     Sprite(masterGrid)
     
     pickCode()
+    
     if data['gameover'] == False:
         App.listenKeyEvent('keydown','r', enterColor)
         App.listenKeyEvent('keydown','b', enterColor)
         App.listenKeyEvent('keydown','g', enterColor)
         App.listenKeyEvent('keydown','y', enterColor)
         App.listenKeyEvent('keydown','enter', checkCode)
-        App().run()
     else:
         Sprite(Gameover_text,(200,200))
+        
+    App().run()
     
