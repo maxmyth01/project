@@ -149,26 +149,28 @@ def checkCode(event):
         data['cows'] =0
         data['bulls'] =0
         
-        # check for bulls
-        if data['digit1'] == data['enter1']:
-            data['bulls'] += 1
-        if data['digit2'] == data['enter2']:
-            data['bulls'] += 1
-        if data['digit3'] == data['enter3']:
-            data['bulls'] += 1
-        if data['digit4'] == data['enter4']:
-            data['bulls'] += 1
+        
+        if data['bulls'] < 4:
+            # check for bulls
+            if data['digit1'] == data['enter1']:
+                data['bulls'] += 1
+            if data['digit2'] == data['enter2']:
+                data['bulls'] += 1
+            if data['digit3'] == data['enter3']:
+                data['bulls'] += 1
+            if data['digit4'] == data['enter4']:
+                data['bulls'] += 1
         
     
-        #check for cows    
-        if data['digit1'] == data['enter2'] or data['digit1'] == data['enter3'] or data['digit1'] == data['enter4']:
-            data['cows'] += 1
-        if data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
-            data['cows'] += 1
-        if data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
-            data['cows'] += 1
-        if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
-            data['cows'] += 1
+            #check for cows    
+            if data['digit1'] == data['enter2'] or data['digit1'] == data['enter3'] or data['digit1'] == data['enter4']:
+                data['cows'] += 1
+            if data['digit2'] == data['enter1'] or data['digit2'] == data['enter3'] or data['digit2'] == data['enter4']:
+                data['cows'] += 1
+            if data['digit3'] == data['enter1'] or data['digit3'] == data['enter2'] or data['digit3'] == data['enter4']:
+                data['cows'] += 1
+            if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
+                data['cows'] += 1
         
         bullcow = ('Bulls', data['bulls']  ,'Cows', data['cows'])
         data['bulls/cows'] = TextAsset(bullcow,fill=brown,style='bold 26pt Times')
@@ -176,14 +178,11 @@ def checkCode(event):
         Sprite(data['bulls/cows'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
         
         if data['bulls'] == 4:
-            Sprite(data['Gameover_text'],(200,200))
-            data['hide'].destroy()
-            Sprite(data['hide'],(400,400))
+            Sprite(data['youWin'],(400,200))
+            
             print('YOU WIN!')
         if data['row'] > 11:
             Sprite(data['Gameover_text'],(200,200))
-            data['hide'].destroy()
-            Sprite(data['hide'],(400,400))
             
     else:
         print('Invalid Code')
@@ -205,6 +204,7 @@ if __name__ == '__main__':
     
     data['cows'] =0
     data['bulls'] =0
+    data['youWin'] = TextAsset('You Win',fill=red,style='bold 40pt Times')
     data['Gameover_text'] = TextAsset('Gameover',fill=red,style='bold 40pt Times')
     data['bulls/cows'] = TextAsset('',fill=red,style='bold 40pt Times')
     
