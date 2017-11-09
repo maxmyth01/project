@@ -170,10 +170,10 @@ def checkCode(event):
         if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
             data['cows'] += 1
         
-        bullcow = ('Bulls:', data['bulls'],'Cows:', data['cows'])
+        bullcow = ('Bulls', data['bulls']  ,'Cows', data['cows'])
         data['bulls/cows'] = TextAsset(bullcow,fill=brown,style='bold 26pt Times')
         
-        Sprite(data['bulls/cows'],(CELL_SIZE*5,CELL_SIZE*data['row']))
+        Sprite(data['bulls/cows'],(CELL_SIZE*3,CELL_SIZE*data['row']))
         
         if data['bulls'] == 4:
             Sprite(data['Gameover_text'],(200,200))
