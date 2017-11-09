@@ -66,7 +66,7 @@ def pickCode():
     elif data['digit4'] == 4:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
 
-    hide = RectangleAsset(CELL_SIZE*4,CELL_SIZE,LineStyle(1,brown),brown)
+    data['hide'] = RectangleAsset(CELL_SIZE*4,CELL_SIZE,LineStyle(1,brown),brown)
     
     Sprite(code1,(0,0))
     Sprite(code2,(CELL_SIZE,0))
@@ -203,15 +203,15 @@ if __name__ == '__main__':
     
     pickCode()
     
-    while True:
-        if data['gameover'] == False:
-            App.listenKeyEvent('keydown','r', enterColor)
-            App.listenKeyEvent('keydown','b', enterColor)
-            App.listenKeyEvent('keydown','g', enterColor)
-            App.listenKeyEvent('keydown','y', enterColor)
-            App.listenKeyEvent('keydown','enter', checkCode)
-        elif data['gameover'] == true or data['row'] > 11:
-            Sprite(Gameover_text,(200,200))
+    if data['gameover'] == False:
+        App.listenKeyEvent('keydown','r', enterColor)
+        App.listenKeyEvent('keydown','b', enterColor)
+        App.listenKeyEvent('keydown','g', enterColor)
+        App.listenKeyEvent('keydown','y', enterColor)
+        App.listenKeyEvent('keydown','enter', checkCode)
+    elif data['gameover'] == true or data['row'] > 11:
+        Sprite(Gameover_text,(200,200))
+        data['hide'].destroy()
         
         App().run()
     
