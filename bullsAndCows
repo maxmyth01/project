@@ -194,15 +194,16 @@ if __name__ == '__main__':
     
     data['cows'] =0
     data['bulls'] =0
+    data['gameover'] = False
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
     
     pickCode()
-    
-    App.listenKeyEvent('keydown','r', enterColor)
-    App.listenKeyEvent('keydown','b', enterColor)
-    App.listenKeyEvent('keydown','g', enterColor)
-    App.listenKeyEvent('keydown','y', enterColor)
-    App.listenKeyEvent('keydown','enter', checkCode)
-    App().run()
+    while data['gameover'] == False:
+        App.listenKeyEvent('keydown','r', enterColor)
+        App.listenKeyEvent('keydown','b', enterColor)
+        App.listenKeyEvent('keydown','g', enterColor)
+        App.listenKeyEvent('keydown','y', enterColor)
+        App.listenKeyEvent('keydown','enter', checkCode)
+        App().run()
