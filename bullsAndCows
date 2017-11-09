@@ -178,10 +178,18 @@ def checkCode(event):
         if data['bulls'] == 4:
             Sprite(data['Gameover_text'],(200,200))
             data['hide'].destroy()
+            Sprite(code1,(0,0))
+            Sprite(code2,(CELL_SIZE,0))
+            Sprite(code3,(CELL_SIZE*2,0))
+            Sprite(code4,(CELL_SIZE*3,0))
             print('YOU WIN!')
         if data['row'] > 11:
             Sprite(data['Gameover_text'],(200,200))
             data['hide'].destroy()
+            Sprite(code1,(0,0))
+            Sprite(code2,(CELL_SIZE,0))
+            Sprite(code3,(CELL_SIZE*2,0))
+            Sprite(code4,(CELL_SIZE*3,0))
             
     else:
         print('Invalid Code')
