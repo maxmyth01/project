@@ -170,7 +170,10 @@ def checkCode(event):
         if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
             data['cows'] += 1
         
-        print('Bulls:',data['bulls'],'Cows:',data['cows'])
+        bull/cow = ('Bulls:',data['bulls'],'Cows:',data['cows'])
+        data['bulls/cows'] = TextAsset(bull/cow,fill=red,style='bold 40pt Times')
+        
+        Sprite(data['bulls/cows'],fill=brown,style='bold 40pt Times',(CELL_SIZE*5,CELL_SIZE*rows))
         
         if data['bulls'] == 4:
             Sprite(data['Gameover_text'],(200,200))
@@ -201,6 +204,7 @@ if __name__ == '__main__':
     data['cows'] =0
     data['bulls'] =0
     data['Gameover_text'] = TextAsset('Gameover',fill=red,style='bold 40pt Times')
+    data['bulls/cows'] = TextAsset('',fill=red,style='bold 40pt Times')
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
