@@ -173,7 +173,7 @@ def checkCode(event):
         bullcow = ('Bulls', data['bulls']  ,'Cows', data['cows'])
         data['bulls/cows'] = TextAsset(bullcow,fill=brown,style='bold 26pt Times')
         
-        Sprite(data['bulls/cows'],(CELL_SIZE*3,CELL_SIZE*data['row']))
+        Sprite(data['bulls/cows'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
         
         if data['bulls'] == 4:
             Sprite(data['Gameover_text'],(200,200))
