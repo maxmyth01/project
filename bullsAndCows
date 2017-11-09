@@ -176,7 +176,7 @@ def checkCode(event):
             Sprite(data['Gameover_text'],(200,200))
             data['hide'].destroy()
             print('YOU WIN!')
-        if data['row'] > 11
+        if data['row'] > 11:
             Sprite(data['Gameover_text'],(200,200))
             data['hide'].destroy()
             
