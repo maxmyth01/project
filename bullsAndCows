@@ -209,7 +209,7 @@ if __name__ == '__main__':
         App.listenKeyEvent('keydown','g', enterColor)
         App.listenKeyEvent('keydown','y', enterColor)
         App.listenKeyEvent('keydown','enter', checkCode)
-    else:
+    elif data['gameover'] == true or data['row'] > 11:
         Sprite(Gameover_text,(200,200))
         
     App().run()
