@@ -140,8 +140,8 @@ def enterColor(event):
             
 def checkCode(event):
     
-    # checks for repeats and doesn't allow
-    if data['enter1'] != data['enter2'] and data['enter1'] != data['enter3'] and data['enter1'] != data['enter4'] and data['enter2'] != data['enter3'] and data['enter2'] != data['enter4'] and data['enter3'] != data['enter4']:
+    # checks for repeats and doesn't allow also check to make sure all are inputed, no partial codes
+    if data['enter1'] != data['enter2'] and data['enter1'] != data['enter3'] and data['enter1'] != data['enter4'] and data['enter2'] != data['enter3'] and data['enter2'] != data['enter4'] and data['enter3'] != data['enter4'] and data['enter1'] != 0 and data['enter2'] != 0 and data['enter3'] != 0 and data['enter4'] != 0 :
         data['row'] += 1
         data['column'] = 0
         
@@ -172,18 +172,22 @@ def checkCode(event):
             if data['digit4'] == data['enter1'] or data['digit4'] == data['enter2'] or data['digit4'] == data['enter3']:
                 data['cows'] += 1
         
+        #change text and print on sceen
         bullcow = ('Bulls', data['bulls']  ,'Cows', data['cows'])
         data['bulls/cows'] = TextAsset(bullcow,fill=brown,style='bold 26pt Times')
-        
         Sprite(data['bulls/cows'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
         
         if data['bulls'] == 4:
             Sprite(data['youWin'],(400,200))
-            
-            print('YOU WIN!')
-        if data['row'] > 11:
+        if data['row'] > 10:
             Sprite(data['Gameover_text'],(200,200))
-            
+        
+        #resets code
+        data['enter1'] = 0
+        data['enter2'] = 0
+        data['enter3'] = 0
+        data['enter4'] = 0
+        
     else:
         print('Invalid Code')
         
