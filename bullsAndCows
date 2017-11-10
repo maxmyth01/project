@@ -179,10 +179,10 @@ def checkCode(event):
         
         if data['bulls'] == 4:
             Sprite(data['youWin'],(200,100))
-             data['end'] = True
+            data['end'] = True
         if data['row'] > 10:
             Sprite(data['Gameover_text'],(200,200))
-             data['end'] = True
+            data['end'] = True
         
         #resets code
         data['enter1'] = 0
