@@ -30,6 +30,7 @@ def pickCode():
         data['digit2'] = randint(1,4)
         data['digit3'] = randint(1,4) 
         data['digit4'] = randint(1,4)
+    #this part assigns a color square based on number
     if data['digit1'] == 1:
         code1 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
     elif data['digit1'] == 2:
@@ -65,7 +66,7 @@ def pickCode():
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
     elif data['digit4'] == 4:
         code4 = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
-
+    # this part hides the random code from the player
     data['hide'] = RectangleAsset(CELL_SIZE*4,CELL_SIZE,LineStyle(1,brown),brown)
     
     Sprite(code1,(0,0))
@@ -73,10 +74,12 @@ def pickCode():
     Sprite(code3,(CELL_SIZE*2,0))
     Sprite(code4,(CELL_SIZE*3,0))
     Sprite(data['hide'])
-
+#this is where the play imputs the code
 def enterColor(event):
+    #checks to make sure game didn't end
     if data['end'] == False:
         if event.key == 'r':
+            # if r is pressed puts a red square in the right spot
             data['column'] += 1
             rrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
             if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
@@ -123,7 +126,6 @@ def enterColor(event):
                 Sprite(grectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
         elif event.key == 'y':
             data['column'] += 1
-            # if y is pressed puts a blue square in the right spot
             yrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
             if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
                 data['enter1'] = 4
@@ -141,7 +143,7 @@ def enterColor(event):
             
 def checkCode(event):
     
-    # checks for repeats and doesn't allow also check to make sure all are inputed, no partial codes
+    # checks for repeats and doesn't allow also check to make sure all are inputed, no partial codes and to make sure game is not over
     if data['enter1'] != data['enter2'] and data['enter1'] != data['enter3'] and data['enter1'] != data['enter4'] and data['enter2'] != data['enter3'] and data['enter2'] != data['enter4'] and data['enter3'] != data['enter4'] and data['enter1'] != 0 and data['enter2'] != 0 and data['enter3'] != 0 and data['enter4'] != 0 and  data['end'] == False:
         data['row'] += 1
         data['column'] = 0
@@ -195,7 +197,7 @@ def checkCode(event):
         print('')
             
     else:
-        print('Invalid Code')
+        Sprite(data['Invalid Code'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
         
 if __name__ == '__main__': 
     data = {}
@@ -218,6 +220,7 @@ if __name__ == '__main__':
     data['youWin'] = TextAsset('You Win',fill=red,style='bold 40pt Times')
     data['Gameover_text'] = TextAsset('Gameover',fill=red,style='bold 40pt Times')
     data['bulls/cows'] = TextAsset('',fill=red,style='bold 40pt Times')
+    data['Invalid Code'] = TextAsset('Invalid Code',fill=brown,style='bold 26pt Times')
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
