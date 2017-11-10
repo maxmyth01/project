@@ -176,7 +176,6 @@ def checkCode(event):
                 data['cows'] += 1
         
         #change text and print on sceen
-        data['Invalid Code'].destroy()
         bullcow = ('Bulls', data['bulls']  ,'Cows', data['cows'])
         data['bulls/cows'] = TextAsset(bullcow,fill=brown,style='bold 26pt Times')
         Sprite(data['bulls/cows'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
@@ -198,7 +197,7 @@ def checkCode(event):
         print('')
             
     else:
-        Sprite(data['Invalid Code'],(CELL_SIZE*4,CELL_SIZE*(data['row'])))
+        Sprite(data['Invalid Code'],(CELL_SIZE*9,CELL_SIZE*(data['row'])))
         
 if __name__ == '__main__': 
     data = {}
@@ -221,7 +220,7 @@ if __name__ == '__main__':
     data['youWin'] = TextAsset('You Win',fill=red,style='bold 40pt Times')
     data['Gameover_text'] = TextAsset('Gameover',fill=red,style='bold 40pt Times')
     data['bulls/cows'] = TextAsset('',fill=red,style='bold 40pt Times')
-    data['Invalid Code'] = TextAsset('Invalid Code',fill=brown,style='bold 26pt Times')
+    data['Invalid Code'] = TextAsset('Invalid_' + 'Code',fill=brown,style='bold 26pt Times')
     
     masterGrid = RectangleAsset(COLS*CELL_SIZE,ROWS*CELL_SIZE,LineStyle(1,brown),brown)
     Sprite(masterGrid)
