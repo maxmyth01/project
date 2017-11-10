@@ -176,6 +176,7 @@ def checkCode(event):
                 data['cows'] += 1
         
         #change text and print on sceen
+        data['Invalid Code'].destroy()
         bullcow = ('Bulls', data['bulls']  ,'Cows', data['cows'])
         data['bulls/cows'] = TextAsset(bullcow,fill=brown,style='bold 26pt Times')
         Sprite(data['bulls/cows'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
