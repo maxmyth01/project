@@ -75,67 +75,68 @@ def pickCode():
     Sprite(data['hide'])
 
 def enterColor(event):
-    if event.key == 'r':
-        data['column'] += 1
-        rrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
-        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-            data['enter1'] = 1
-            Sprite(rrectangle, (0,CELL_SIZE*data['row']))
-        elif data['column'] == 2 or data['column'] % 4 == 2:
-            data['enter2'] = 1
-            Sprite(rrectangle, (CELL_SIZE,CELL_SIZE*data['row']))
-        elif data['column'] == 3 or data['column'] % 4 == 3:
-            data['enter3'] = 1
-            Sprite(rrectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
-        elif data['column'] == 4 or data['column'] % 4 == 0:
-            data['enter4'] = 1
-            Sprite(rrectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
-    elif event.key == 'b':
-        data['column'] += 1
-        brectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
-        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-            data['enter1'] = 2
-            Sprite(brectangle, (0,CELL_SIZE*data['row']))
-        elif data['column'] == 2 or data['column'] % 4 == 2:
-            data['enter2'] = 2
-            Sprite(brectangle, (CELL_SIZE,CELL_SIZE*data['row']))
-        elif data['column'] == 3 or data['column'] % 4 == 3:
-            data['enter3'] = 2
-            Sprite(brectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
-        elif data['column'] == 4 or data['column'] % 4 == 0:
-            data['enter4'] = 2
-            Sprite(brectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
-    elif event.key == 'g':
-        data['column'] += 1
-        grectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
-        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-            data['enter1'] = 3
-            Sprite(grectangle, (0,CELL_SIZE*data['row']))
-        elif data['column'] == 2 or data['column'] % 4 == 2:
-            data['enter2'] = 3
-            Sprite(grectangle, (CELL_SIZE,CELL_SIZE*data['row']))
-        elif data['column'] == 3 or data['column'] % 4 == 3:
-            data['enter3'] = 3
-            Sprite(grectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
-        elif data['column'] == 4 or data['column'] % 4 == 0:
-            data['enter4'] = 3
-            Sprite(grectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
-    elif event.key == 'y':
-        data['column'] += 1
-        # if y is pressed puts a blue square in the right spot
-        yrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
-        if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
-            data['enter1'] = 4
-            Sprite(yrectangle, (0,CELL_SIZE*data['row']))
-        elif data['column'] == 2 or data['column'] % 4 == 2:
-            data['enter2'] = 4
-            Sprite(yrectangle, (CELL_SIZE,CELL_SIZE*data['row']))
-        elif data['column'] == 3 or data['column'] % 4 == 3:
-            data['enter3'] = 4
-            Sprite(yrectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
-        elif data['column'] == 4 or data['column'] % 4 == 0:
-            data['enter4'] = 4
-            Sprite(yrectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
+    if data['end'] == False:
+        if event.key == 'r':
+            data['column'] += 1
+            rrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,red),red)
+            if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+                data['enter1'] = 1
+                Sprite(rrectangle, (0,CELL_SIZE*data['row']))
+            elif data['column'] == 2 or data['column'] % 4 == 2:
+                data['enter2'] = 1
+                Sprite(rrectangle, (CELL_SIZE,CELL_SIZE*data['row']))
+            elif data['column'] == 3 or data['column'] % 4 == 3:
+                data['enter3'] = 1
+                Sprite(rrectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
+            elif data['column'] == 4 or data['column'] % 4 == 0:
+                data['enter4'] = 1
+                Sprite(rrectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
+        elif event.key == 'b':
+            data['column'] += 1
+            brectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,blue),blue)
+            if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+                data['enter1'] = 2
+                Sprite(brectangle, (0,CELL_SIZE*data['row']))
+            elif data['column'] == 2 or data['column'] % 4 == 2:
+                data['enter2'] = 2
+                Sprite(brectangle, (CELL_SIZE,CELL_SIZE*data['row']))
+            elif data['column'] == 3 or data['column'] % 4 == 3:
+                data['enter3'] = 2
+                Sprite(brectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
+            elif data['column'] == 4 or data['column'] % 4 == 0:
+                data['enter4'] = 2
+                Sprite(brectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
+        elif event.key == 'g':
+            data['column'] += 1
+            grectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,green),green)
+            if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+                data['enter1'] = 3
+                Sprite(grectangle, (0,CELL_SIZE*data['row']))
+            elif data['column'] == 2 or data['column'] % 4 == 2:
+                data['enter2'] = 3
+                Sprite(grectangle, (CELL_SIZE,CELL_SIZE*data['row']))
+            elif data['column'] == 3 or data['column'] % 4 == 3:
+                data['enter3'] = 3
+                Sprite(grectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
+            elif data['column'] == 4 or data['column'] % 4 == 0:
+                data['enter4'] = 3
+                Sprite(grectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
+        elif event.key == 'y':
+            data['column'] += 1
+            # if y is pressed puts a blue square in the right spot
+            yrectangle = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,yellow),yellow)
+            if data['column'] == 1 or data['column'] % 4 == 1: # need to account for exceeding 4
+                data['enter1'] = 4
+                Sprite(yrectangle, (0,CELL_SIZE*data['row']))
+            elif data['column'] == 2 or data['column'] % 4 == 2:
+                data['enter2'] = 4
+                Sprite(yrectangle, (CELL_SIZE,CELL_SIZE*data['row']))
+            elif data['column'] == 3 or data['column'] % 4 == 3:
+                data['enter3'] = 4
+                Sprite(yrectangle, (CELL_SIZE*2,CELL_SIZE*data['row']))
+            elif data['column'] == 4 or data['column'] % 4 == 0:
+                data['enter4'] = 4
+                Sprite(yrectangle, (CELL_SIZE*3,CELL_SIZE*data['row']))
 
             
 def checkCode(event):
