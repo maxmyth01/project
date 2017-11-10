@@ -141,7 +141,7 @@ def enterColor(event):
 def checkCode(event):
     
     # checks for repeats and doesn't allow also check to make sure all are inputed, no partial codes
-    if data['enter1'] != data['enter2'] and data['enter1'] != data['enter3'] and data['enter1'] != data['enter4'] and data['enter2'] != data['enter3'] and data['enter2'] != data['enter4'] and data['enter3'] != data['enter4'] and data['enter1'] != 0 and data['enter2'] != 0 and data['enter3'] != 0 and data['enter4'] != 0 and  data['end'] = False:
+    if data['enter1'] != data['enter2'] and data['enter1'] != data['enter3'] and data['enter1'] != data['enter4'] and data['enter2'] != data['enter3'] and data['enter2'] != data['enter4'] and data['enter3'] != data['enter4'] and data['enter1'] != 0 and data['enter2'] != 0 and data['enter3'] != 0 and data['enter4'] != 0 and  data['end'] == False:
         data['row'] += 1
         data['column'] = 0
         
@@ -190,7 +190,7 @@ def checkCode(event):
         data['enter3'] = 0
         data['enter4'] = 0
     # prevents further game play after a win or running out of spaces
-    elif  data['end'] = True:
+    elif  data['end'] == True:
         
             
     else:
