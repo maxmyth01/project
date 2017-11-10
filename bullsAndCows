@@ -197,7 +197,7 @@ def checkCode(event):
         print('')
             
     else:
-        Sprite(data['Invalid Code'],(CELL_SIZE*4,CELL_SIZE*(data['row']-1)))
+        Sprite(data['Invalid Code'],(CELL_SIZE*4,CELL_SIZE*(data['row'])))
         
 if __name__ == '__main__': 
     data = {}
