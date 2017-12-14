@@ -5,7 +5,7 @@
 
 def buildBoard():
     board = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
-    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
+    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,brown),white)
     for row in range(0,5):
         for col in range(0,5):
             print(board[row][col],' ',end = '')
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     ROWS = 5
     COLS = 5
     CELL_SIZE = 20
-    black = Color(0x000000,1)
+    brown = Color(0x8B4513,1)
     white = Color(0xFFFFFF,1)
 
     buildBoard()
