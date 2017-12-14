@@ -2,6 +2,12 @@
 #12-14-17
 #battleship.py -- battleship game
 
+ #constants and colors
+ROWS = 5
+COLS = 5
+CELL_SIZE = 20
+brown = Color(0x8B4513,1)
+white = Color(0xFFFFFF,1)
 
 def buildBoard():
     board = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
@@ -21,11 +27,5 @@ def mouseClick():
 """
     
 if __name__ == '__main__':
-    #constants and colors
-    ROWS = 5
-    COLS = 5
-    CELL_SIZE = 20
-    brown = Color(0x8B4513,1)
-    white = Color(0xFFFFFF,1)
 
     buildBoard()
