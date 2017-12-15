@@ -41,3 +41,5 @@ def mouseClick():
 if __name__ == '__main__':
 
     print(buildBoard())
+    
+    App().run()
