@@ -13,8 +13,11 @@ white = Color(0xFFFFFF,1)
 
 def buildBoard():
     board = []
+    subboard = []
+    for j in range(0,ROWS):
+        subboard.append(0)
     for i in range(0,COLS):
-        board.append(['0,'*ROWS])
+        board.append(subboard)
     return board
 
 """
