@@ -48,5 +48,6 @@ if __name__ == '__main__':
 
     print(buildBoard())
     redrawAll()
+    pickComputerShips()
     
     App().run()
