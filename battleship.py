@@ -12,7 +12,9 @@ black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 
 def buildBoard():
-    board = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
+    board = []
+    for i in range(0,COLS):
+        board.append([0,* ROWS])
     return board
 
 """
