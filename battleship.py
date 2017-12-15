@@ -22,14 +22,14 @@ def buildBoard():
 
 
 def redrawAll():
-    x=0
     y=0
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black ),white)
-    for row in range(0,5):
-        for col in range(0,5):
+    for row in range(0,ROWS):
+        x=0
+        for col in range(0,COLS):
             Sprite(square,(x,y))
             x += CELL_SIZE
-        y -= CELL_SIZE
+        y += CELL_SIZE
 """
 def pickComputerShips():
     
