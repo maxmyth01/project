@@ -27,7 +27,7 @@ def redrawAll():
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black ),white)
     for row in range(0,5):
         for col in range(0,5):
-            Sprite(square)
+            Sprite(square,(x,y))
             x += CELL_SIZE
         y -= CELL_SIZE
 """
@@ -41,5 +41,6 @@ def mouseClick():
 if __name__ == '__main__':
 
     print(buildBoard())
+    redrawAll()
     
     App().run()
