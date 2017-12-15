@@ -20,14 +20,17 @@ def buildBoard():
         board.append(subboard)
     return board
 
-"""
+
 def redrawAll():
-square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black ),white)
- for row in range(0,5):
+    x=0
+    y=0
+    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black ),white)
+    for row in range(0,5):
         for col in range(0,5):
-            print(board[row][col],' ',end = '')
-        print()
-    
+            Sprite(square)
+            x += CELL_SIZE
+        y -= CELL_SIZE
+"""
 def pickComputerShips():
     
 def computerTurn():
