@@ -52,5 +52,6 @@ if __name__ == '__main__':
     print(buildBoard())
     redrawAll()
     pickComputerShips()
+    print(data['board'])
     
     App().run()
