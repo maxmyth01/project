@@ -36,7 +36,7 @@ def redrawAll():
         y += CELL_SIZE
 
 def pickComputerShips():
-    data['board'][randint(0,ROWS-1)][randint(0,COLS-1)] = "x" 
+    data['board'][randint(0,COLS-1)][randint(0,ROWS-1)] = "x" 
     
 """
 def computerTurn():
