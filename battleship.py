@@ -13,13 +13,13 @@ black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 
 def buildBoard():
-    board = []
+    data['board'] = []
     subboard = []
     for j in range(0,ROWS):
         subboard.append(0)
     for i in range(0,COLS):
-        board.append(subboard)
-    return board
+        data['board'].append(subboard)
+    return data['board']
 
 
 def redrawAll():
@@ -45,6 +45,9 @@ def mouseClick():
 """
     
 if __name__ == '__main__':
+    
+    data = {}
+    data['board'] = []
 
     print(buildBoard())
     redrawAll()
