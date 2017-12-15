@@ -14,7 +14,8 @@ white = Color(0xFFFFFF,1)
 def buildBoard():
     board = []
     for i in range(0,COLS):
-        board.append([0,* ROWS])
+        for j in range(0,ROWS):
+            board.append([0)
     return board
 
 """
