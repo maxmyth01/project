@@ -13,7 +13,7 @@ black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 gray = Color(0xD3D3D3,1)
 red = Color(0xFF0000,1)
-blue = Color(0x00FF00,1)
+blue = Color(0x0000FF,1)
 
 
 def buildBoard():
