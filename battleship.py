@@ -42,8 +42,8 @@ def pickComputerShips():
     while ships < 3:
         rand1 = randint(0,COLS-1)
         rand2 = randint(0,ROWS-1)
-        if data['board'][rand1][rand2] != "x":
-            data['board'][rand1][rand2] = "x"
+        if data['computerboard'][rand1][rand2] != "x":
+            data['computerboard'][rand1][rand2] = "x"
             ships += 1
         
     
@@ -59,7 +59,10 @@ if __name__ == '__main__':
     data['board'] = []
     data['playerboard'] = []
     data['computerboard'] = []
-
+    
+    data['playerboard'] = buildBoard()
+    data['computerboard'] = buildBoard()
+    
     print(buildBoard())
     
     redrawAll()
