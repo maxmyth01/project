@@ -37,18 +37,27 @@ def redrawAll():
                 x += CELL_SIZE
             y += CELL_SIZE
 
-def pickComputerShips():
-    ships =0 
-    while ships < 3:
+def pickComputerShips(): # x represents a ship
+    data['cships'] =0 
+    while data['cships'] < 3:
         rand1 = randint(0,COLS-1)
         rand2 = randint(0,ROWS-1)
         if data['computerboard'][rand1][rand2] != "x":
             data['computerboard'][rand1][rand2] = "x"
-            ships += 1
+            data['cships'] += 1
         
     
 """
-def computerTurn():
+def computerTurn(): # y represents a miss, z is a hit
+    while false:
+        rand1 = randint(0,COLS-1)
+        rand2 = randint(0,ROWS-1)
+        if data['playerboard'][rand1][rand2] != "y":
+            if data['playerboard'][rand1][rand2] != "x":
+                data['playerboard'][rand1][rand2] = "z"
+            else:
+                data['playerboard'][rand1][rand2] = "y"
+    
     
 def mouseClick():
 """
@@ -59,6 +68,8 @@ if __name__ == '__main__':
     data['board'] = []
     data['playerboard'] = []
     data['computerboard'] = []
+    data['cships'] =0
+    data['pships'] =0
     
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
