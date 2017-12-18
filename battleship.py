@@ -26,8 +26,7 @@ def redrawAll():
         
     y=0
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
-    z = 0
-    while z < 2:
+    for z in range (0,2):
         for row in range(0,ROWS):
             x=0
             for col in range(0,COLS):
@@ -36,7 +35,6 @@ def redrawAll():
                 Sprite(square,(x,y))
                 x += CELL_SIZE
             y += CELL_SIZE
-        Z += 1
 
 def pickComputerShips():
     
