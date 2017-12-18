@@ -27,7 +27,7 @@ def redrawAll():
         square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
         for row in range(0,ROWS):
             for col in range(0,COLS):
-                Sprite(square,(row*CELL_SIZE,col*CELL_SIZE))
+                Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
 
 def pickComputerShips(): # x represents a ship
     data['cships'] =0 
