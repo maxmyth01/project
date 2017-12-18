@@ -39,7 +39,7 @@ def pickComputerShips(): # x represents a ship
             data['cships'] += 1
         
     
-"""
+
 def computerTurn(): # y represents a miss, z is a hit
     while false:
         rand1 = randint(0,COLS-1)
@@ -47,10 +47,15 @@ def computerTurn(): # y represents a miss, z is a hit
         if data['playerboard'][rand1][rand2] != "y":
             if data['playerboard'][rand1][rand2] != "x":
                 data['playerboard'][rand1][rand2] = "z"
+                data['pships'] -= 1
+                break
             else:
                 data['playerboard'][rand1][rand2] = "y"
+                break
+    if data['pships'] == 0:
+        print("The Computer wins!")
     
-    
+"""    
 def mouseClick():
 """
     
