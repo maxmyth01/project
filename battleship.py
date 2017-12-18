@@ -63,10 +63,14 @@ if __name__ == '__main__':
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
     
-    print(buildBoard())
-    
     redrawAll()
     pickComputerShips()
-    print(data['board'])
+    
+    print(data['computerboard'])
+    print(data['playerboard'])
+    
+    
+    
+    
     
     App().run()
