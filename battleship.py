@@ -28,6 +28,8 @@ def redrawAll():
         for row in range(0,ROWS):
             for col in range(0,COLS):
                 Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                if z == 0 and :
+                    
 
 def pickComputerShips(): # x represents a ship
     data['cships'] =0 
@@ -74,8 +76,9 @@ if __name__ == '__main__':
     redrawAll()
     pickComputerShips()
     
-    print(data['computerboard'])
     print(data['playerboard'])
+    print(data['computerboard'])
+
     
     
     
