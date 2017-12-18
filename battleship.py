@@ -11,6 +11,9 @@ COLS = 5
 CELL_SIZE = 20
 black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
+gray
+red
+
 
 def buildBoard():
     data['board'] = []
@@ -21,15 +24,25 @@ def buildBoard():
 
 
 def redrawAll():
+    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
+    ship = 
+    miss = 
+    hit  = 
     for item in App().spritelist[:]:
         item.destroy()
     for z in range (0,2):
-        square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
         for row in range(0,ROWS):
             for col in range(0,COLS):
                 Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
-                if z == 0 and :
+                if z == 0 and data['playerboard'][row][col] == "x": #print a ship
+                    Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                if z == 0 and data['playerboard'][row][col] == "y": # print a miss
+                
+                if z == 0 and data['playerboard'][row][col] == "z": # print a hit
                     
+                if z == 0 and data['playerboard'][row][col] == "y": # print a miss
+                    
+                if z == 0 and data['playerboard'][row][col] == "z":# print a hit
 
 def pickComputerShips(): # x represents a ship
     data['cships'] =0 
