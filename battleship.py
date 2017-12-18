@@ -11,8 +11,8 @@ COLS = 5
 CELL_SIZE = 20
 black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
-gray
-red
+gray = Color(0xD3D3D3,1)
+red = Color(0xFF0000,1)
 
 
 def buildBoard():
@@ -26,23 +26,24 @@ def buildBoard():
 def redrawAll():
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
     ship = 
-    miss = 
-    hit  = 
+    miss = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),gray)
+    hit  = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),red)
     for item in App().spritelist[:]:
         item.destroy()
     for z in range (0,2):
         for row in range(0,ROWS):
             for col in range(0,COLS):
                 Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
-                if z == 0 and data['playerboard'][row][col] == "x": #print a ship
-                    Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                if z == 0 and data['playerboard'][row][col] == "x": #print a ship on your board so you can see the computers move
+                    Sprite(ship,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "y": # print a miss
-                
+                    Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "z": # print a hit
-                    
-                if z == 0 and data['playerboard'][row][col] == "y": # print a miss
-                    
-                if z == 0 and data['playerboard'][row][col] == "z":# print a hit
+                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                if z == 1 and data['playerboard'][row][col] == "y": # print a miss your current moves to plan your next
+                    Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                if z == 1 and data['playerboard'][row][col] == "z": # print a hit
+                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
 
 def pickComputerShips(): # x represents a ship
     data['cships'] =0 
