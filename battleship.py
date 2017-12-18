@@ -24,9 +24,9 @@ def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
         
-    y=0
-    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
     for z in range (0,2):
+        y=0
+        square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
         for row in range(0,ROWS):
             x=0
             for col in range(0,COLS):
