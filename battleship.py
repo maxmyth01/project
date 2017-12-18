@@ -90,6 +90,7 @@ if __name__ == '__main__':
     
     redrawAll()
     pickComputerShips()
+    redrawAll()
     
     print(data['playerboard'])
     print(data['computerboard'])
