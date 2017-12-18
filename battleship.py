@@ -23,15 +23,19 @@ def buildBoard():
 def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
-    
+        
     y=0
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
-    for row in range(0,ROWS):
-        x=0
-        for col in range(0,COLS):
-            Sprite(square,(x,y))
-            x += CELL_SIZE
-        y += CELL_SIZE
+    z = 0
+    while z > 2:
+        for row in range(0,ROWS):
+            x=0
+            for col in range(0,COLS):
+                if z = 1:
+                    x = x+200
+                Sprite(square,(x,y))
+                x += CELL_SIZE
+            y += CELL_SIZE
 
 def pickComputerShips():
     
