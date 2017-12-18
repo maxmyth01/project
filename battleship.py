@@ -36,6 +36,7 @@ def redrawAll():
                 Sprite(square,(x,y))
                 x += CELL_SIZE
             y += CELL_SIZE
+        Z += 1
 
 def pickComputerShips():
     
