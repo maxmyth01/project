@@ -27,7 +27,7 @@ def redrawAll():
     y=0
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
     z = 0
-    while z > 2:
+    while z < 2:
         for row in range(0,ROWS):
             x=0
             for col in range(0,COLS):
