@@ -6,8 +6,8 @@ from ggame import *
 from random import randint
 
  #constants and colors
-ROWS = 3
-COLS = 12
+ROWS = 5
+COLS = 5
 CELL_SIZE = 20
 black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
