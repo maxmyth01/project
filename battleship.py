@@ -40,8 +40,10 @@ def redrawAll():
 def pickComputerShips():
     ships =0 
     while ships < 3:
-        if data['board'][randint(0,COLS-1)][randint(0,ROWS-1)] != "x":
-            data['board'][randint(0,COLS-1)][randint(0,ROWS-1)]
+        rand1 = randint(0,COLS-1)
+        rand2 = randint(0,ROWS-1)
+        if data['board'][rand1][rand2] != "x":
+            data['board'][rand1][rand2]
             ships += 1
         
     
