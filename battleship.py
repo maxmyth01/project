@@ -13,6 +13,7 @@ black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 gray = Color(0xD3D3D3,1)
 red = Color(0xFF0000,1)
+blue = Color(0x00FF00,1)
 
 
 def buildBoard():
@@ -24,9 +25,9 @@ def buildBoard():
 
 
 def redrawAll():
-    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
-    ship = 
-    miss = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),gray)
+    square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),blue)
+    ship = blueCircle = CircleAsset(0.5*CELL_SIZE,LineStyle(1,black),gray)
+    miss = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
     hit  = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),red)
     for item in App().spritelist[:]:
         item.destroy()
