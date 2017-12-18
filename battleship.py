@@ -31,7 +31,7 @@ def redrawAll():
         for row in range(0,ROWS):
             x=0
             for col in range(0,COLS):
-                if z = 1:
+                if z == 1:
                     x = x+200
                 Sprite(square,(x,y))
                 x += CELL_SIZE
