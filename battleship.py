@@ -40,10 +40,10 @@ def redrawAll():
                 if z == 0 and data['playerboard'][row][col] == "y": # print a miss
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "z": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
-                if z == 1 and data['playerboard'][row][col] == "y": # print a miss your current moves to plan your next
+                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE)
+                if z == 1 and data['computerboard'][row][col] == "y": # print a miss your current moves to plan your next
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
-                if z == 1 and data['playerboard'][row][col] == "z": # print a hit
+                if z == 1 and data['computerboard'][row][col] == "z": # print a hit
                     Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
 
 def pickComputerShips(): # x represents a ship
@@ -90,7 +90,6 @@ if __name__ == '__main__':
     
     redrawAll()
     pickComputerShips()
-    redrawAll()
     
     print(data['playerboard'])
     print(data['computerboard'])
