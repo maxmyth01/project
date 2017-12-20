@@ -73,6 +73,11 @@ def computerTurn(): # y represents a miss, z is a hit
         print("The Computer wins!")
     
 def mouseClick(event):
+    if data['placedships'] = False:
+        for data['pships'] < 3:
+            
+            data['pships'] += 1
+        data['placedships'] = True:
     
     
 if __name__ == '__main__':
@@ -83,6 +88,7 @@ if __name__ == '__main__':
     data['computerboard'] = []
     data['cships'] =0
     data['pships'] =0
+    data['placedships'] = False
     
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
