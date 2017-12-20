@@ -77,7 +77,7 @@ def mouseClick(event):
         for data['pships'] < 3:
             
             data['pships'] += 1
-        data['placedships'] = True:
+        data['placedships'] = True
     
     
 if __name__ == '__main__':
