@@ -73,7 +73,7 @@ def computerTurn(): # y represents a miss, z is a hit
         print("The Computer wins!")
     
 def mouseClick(event):
-    if data['placedships'] = False:
+    if data['placedships'] == False:
         for data['pships'] < 3:
             
             data['pships'] += 1
