@@ -72,9 +72,8 @@ def computerTurn(): # y represents a miss, z is a hit
     if data['pships'] == 0:
         print("The Computer wins!")
     
-"""    
-def mouseClick():
-"""
+def mouseClick(event):
+    
     
 if __name__ == '__main__':
     
@@ -99,4 +98,5 @@ if __name__ == '__main__':
     
     
     
+    App().listenMouseEvent('click', mouseClick)
     App().run()
