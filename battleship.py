@@ -40,7 +40,7 @@ def redrawAll():
                 if z == 0 and data['playerboard'][row][col] == "y": # print a miss
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "z": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE)
+                    Sprite(hit,(row*CELL_SIZE +(200*z)),(col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "y": # print a miss your current moves to plan your next
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "z": # print a hit
@@ -61,7 +61,7 @@ def computerTurn(): # y represents a miss, z is a hit
     while false:
         rand1 = randint(0,COLS-1)
         rand2 = randint(0,ROWS-1)
-        if data['playerboard'][rand1][rand2] != "y":
+        if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
             if data['playerboard'][rand1][rand2] != "x":
                 data['playerboard'][rand1][rand2] = "z"
                 data['pships'] -= 1
