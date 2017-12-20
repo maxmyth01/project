@@ -82,12 +82,12 @@ def mouseClick(event):
         data['placedships'] = True
     else:
         if event.x > 0 and  event.x < CELL_SIZE and event.y < 0 and event.y > -CELL_SIZE:
-        if data['computerboard'][0][0] == "0": #if empty cell mark as miss
-            data['computerboard'][0][0] = "y"
-        if data['computerboard'][0][0] == "x": #if ship mark as hit
-            data['computerboard'][0][0] = "z"
-        if data['computerboard'][0][0] == "z" or data['computerboard'][0][0] == "y":
-            print("INVALID MOVE, GO AGAIN") 
+            if data['computerboard'][0][0] == "0": #if empty cell mark as miss
+                data['computerboard'][0][0] = "y"
+            if data['computerboard'][0][0] == "x": #if ship mark as hit
+                data['computerboard'][0][0] = "z"
+            if data['computerboard'][0][0] == "z" or data['computerboard'][0][0] == "y":
+                print("INVALID MOVE, GO AGAIN") 
     
     
 if __name__ == '__main__':
