@@ -72,7 +72,7 @@ def computerTurn(): # y represents a miss, z is a hit
         print("The Computer wins!")
     
 def mouseClick(event):
-    x_location = event.x // CELL_SIZE
+    x_location = event.x // CELL_SIZE # lets user place their ships on their board, left side
     y_location = event.y // CELL_SIZE
     
     if data['placedships'] == False:
@@ -83,15 +83,18 @@ def mouseClick(event):
             if data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                 print("INVALID MOVE, GO AGAIN")
         data['placedships'] = True
-        break
     
     """
+    x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
+    y_location = (event.y - 200) // CELL_SIZE
     if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as miss
         data['computerboard'][x_location][y_location] = "y"
-    if data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
+    elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
         data['computerboard'][x_location][y_location] = "z"
-    if data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location0] == "y":
-        print("INVALID MOVE, GO AGAIN") 
+    elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location0] == "y":
+        print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
+    else:
+        print("INVALID MOVE, OUT OF RANGE")
     """
 
     
