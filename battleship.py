@@ -84,8 +84,7 @@ def mouseClick(event):
                 if data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                     print("INVALID MOVE, GO AGAIN")
         data['placedships'] = True
-        if ['placedships'] = True:
-            break
+        break
     
     """
     if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as miss
