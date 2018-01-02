@@ -18,7 +18,6 @@ blue = Color(0x0000FF,1)
 
 def buildBoard():
     data['board'] = []
-    subboard = []
     for i in range(0,COLS):
         data['board'].append([0]*ROWS)
     return data['board']
@@ -73,26 +72,29 @@ def computerTurn(): # y represents a miss, z is a hit
         print("The Computer wins!")
     
 def mouseClick(event):
-    event.x
-    event.y
+    x_location = event.x // CELL_SIZE
+    y_location = event.y // CELL_SIZE
+    
     if data['placedships'] == False:
         for data['pships'] < 3:
             if event.x > 0 and  event.x < CELL_SIZE and event.y < 0 and event.y > -CELL_SIZE:
-                if data['computerboard'][0][0] == "0": #if empty cell mark as ship
-                    data['computerboard'][0][0] = "x"
+                if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as ship
+                    data['computerboard'][x_location][y_location] = "x"
                     data['pships'] += 1
-                if data['computerboard'][0][0] == "0": #if already a ship do nothing
+                if data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                     print("INVALID MOVE, GO AGAIN")
         data['placedships'] = True
-    else:
-        if event.x > 0 and  event.x < CELL_SIZE and event.y < 0 and event.y > -CELL_SIZE:
-            if data['computerboard'][0][0] == "0": #if empty cell mark as miss
-                data['computerboard'][0][0] = "y"
-            if data['computerboard'][0][0] == "x": #if ship mark as hit
-                data['computerboard'][0][0] = "z"
-            if data['computerboard'][0][0] == "z" or data['computerboard'][0][0] == "y":
-                print("INVALID MOVE, GO AGAIN") 
+        break
     
+    """
+    if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as miss
+        data['computerboard'][x_location][y_location] = "y"
+    if data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
+        data['computerboard'][x_location][y_location] = "z"
+    if data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location0] == "y":
+        print("INVALID MOVE, GO AGAIN") 
+    """
+
     
 if __name__ == '__main__':
     
@@ -103,13 +105,13 @@ if __name__ == '__main__':
     data['cships'] =0
     data['pships'] =0
     data['placedships'] = False
-    
+
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
-    
+  
     redrawAll()
     pickComputerShips()
-    
+
     print(data['playerboard'])
     print(data['computerboard'])
 
@@ -117,6 +119,7 @@ if __name__ == '__main__':
     
     
     
-    
+    """
     App().listenMouseEvent('click', mouseClick)
+    """
     App().run()
