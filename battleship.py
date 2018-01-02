@@ -5,7 +5,9 @@
 from ggame import *
 from random import randint
 
- #constants and colors
+
+
+#constants and colors
 ROWS = 5
 COLS = 5
 CELL_SIZE = 20
@@ -16,11 +18,13 @@ red = Color(0xFF0000,1)
 blue = Color(0x0000FF,1)
 
 
+
 def buildBoard():
     data['board'] = []
     for i in range(0,COLS):
         data['board'].append([0]*ROWS)
     return data['board']
+
 
 
 def redrawAll():
@@ -44,6 +48,8 @@ def redrawAll():
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "z": # print a hit
                     Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+
+
 
 def pickComputerShips(): # x represents a ship
     data['cships'] =0 
@@ -70,6 +76,8 @@ def computerTurn(): # y represents a miss, z is a hit
                 break
     if data['pships'] == 0:
         print("The Computer wins!")
+    
+    
     
 def mouseClick(event):
     x_location = event.x // CELL_SIZE # lets user place their ships on their board, left side
