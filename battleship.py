@@ -35,8 +35,8 @@ def redrawAll():
     for item in App().spritelist[:]:
         item.destroy()
     for z in range (0,2):
-        for row in range(0,ROWS):
-            for col in range(0,COLS):
+        for col in range(0,COLS):
+            for row in range(0,ROWS):
                 Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "x": #print a ship on your board so you can see the computers move
                     Sprite(ship,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
