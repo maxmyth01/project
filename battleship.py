@@ -103,9 +103,10 @@ def mouseClick(event):
             print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
         else:
             print("INVALID MOVE, OUT OF RANGE")
+        #after your turn checks if you won
+        if data['cships'] == 0:
+            print("The player wins!")
     
-    computerTurn()
-    redrawAll()
     
 
     
