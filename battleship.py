@@ -48,7 +48,7 @@ def redrawAll():
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "z": # print a hit
                     Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
-                if z == 1 and data['computerboard'][row][col] == "x": # print a hit
+                if z == 1 and data['computerboard'][row][col] == "x": # helping code
                     Sprite(ship,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
 
 
