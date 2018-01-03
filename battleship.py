@@ -91,6 +91,8 @@ def mouseClick(event):
                 data['computerboard'][x_location][y_location] = "x"
                 data['pships'] += 1
                 redrawAll()
+                print(data['playerboard'])
+                print(data['computerboard'])
             elif data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                 print("INVALID MOVE, GO AGAIN")
         if data['pships'] == 3: 
