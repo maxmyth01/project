@@ -90,7 +90,7 @@ def mouseClick(event):
                 data['pships'] += 1
             if data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                 print("INVALID MOVE, GO AGAIN")
-        if data['pships'] = 3: 
+        if data['pships'] == 3: 
             data['placedships'] = True
         
     else:
