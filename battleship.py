@@ -87,7 +87,8 @@ def mouseClick(event):
         y_location = event.y // CELL_SIZE
         
         if data['pships'] < 3:
-            if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as ship
+            print('hi',x_location,y_location)
+            if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as ship
                 data['computerboard'][x_location][y_location] = "x"
                 data['pships'] += 1
                 redrawAll()
