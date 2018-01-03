@@ -105,6 +105,7 @@ def mouseClick(event):
             data['computerboard'][x_location][y_location] = "y"
         elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
             data['computerboard'][x_location][y_location] = "z"
+            data['cships'] -= 1
         elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location0] == "y":
             print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
         else:
