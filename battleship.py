@@ -83,21 +83,15 @@ def mouseClick(event):
     x_location = event.x // CELL_SIZE # lets user place their ships on their board, left side
     y_location = event.y // CELL_SIZE
     
-    
-    
-    #Isoloated error to here, varible pships or playerships, creating infinite loop?
     if data['placedships'] == False:
-        for data['pships'] < 3:
+        while data['pships'] < 3:
             if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as ship
                 data['computerboard'][x_location][y_location] = "x"
                 data['pships'] += 1
             if data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                 print("INVALID MOVE, GO AGAIN")
         data['placedships'] = True
-    
-    
-    
-    
+        
     else:
         x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
         y_location = (event.y - 200) // CELL_SIZE
