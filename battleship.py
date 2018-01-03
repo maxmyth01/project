@@ -84,13 +84,14 @@ def mouseClick(event):
     y_location = event.y // CELL_SIZE
     
     if data['placedships'] == False:
-        while data['pships'] < 3:
+        if data['pships'] < 3:
             if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as ship
                 data['computerboard'][x_location][y_location] = "x"
                 data['pships'] += 1
             if data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                 print("INVALID MOVE, GO AGAIN")
-        data['placedships'] = True
+        if data['pships'] = 3: 
+            data['placedships'] = True
         
     else:
         x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
