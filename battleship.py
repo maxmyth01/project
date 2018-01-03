@@ -104,6 +104,9 @@ def mouseClick(event):
         else:
             print("INVALID MOVE, OUT OF RANGE")
     
+    computerTurn()
+    redrawAll()
+    
 
     
 if __name__ == '__main__':
