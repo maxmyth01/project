@@ -104,15 +104,20 @@ def mouseClick(event):
     else:
         x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
         y_location = (event.y) // CELL_SIZE
+        print('hi',x_location,y_location)
         if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as miss
             data['computerboard'][x_location][y_location] = "y"
         elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
             data['computerboard'][x_location][y_location] = "z"
             data['cships'] -= 1
+            
         elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location0] == "y":
             print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
         else:
             print("INVALID MOVE, OUT OF RANGE")
+        redrawAll()
+        print(data['playerboard'])
+        print(data['computerboard'])
         #after your turn checks if you won
         if data['cships'] == 0:
             print("The player wins!")
@@ -139,10 +144,6 @@ if __name__ == '__main__':
     print(data['playerboard'])
     print(data['computerboard'])
 
-    
-    
-    
-    
     
     App().listenMouseEvent('click', mouseClick)
     
