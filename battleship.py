@@ -121,6 +121,7 @@ def mouseClick(event):
         #after your turn checks if you won
         if data['cships'] == 0:
             print("The player wins!")
+        print("hello? computer")
         computerTurn()
     
     
