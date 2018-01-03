@@ -41,15 +41,15 @@ def redrawAll():
                 if z == 0 and data['playerboard'][row][col] == "x": #print a ship on your board so you can see the computers move
                     Sprite(ship,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
                 if z == 0 and data['playerboard'][row][col] == "y": # print a miss
-                    Sprite(miss,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
+                    Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "z": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z))+(0.5*CELL_SIZE),(col*CELL_SIZE)+(0.5*CELL_SIZE))
+                    Sprite(hit,(row*CELL_SIZE +(200*z)),(col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "y": # print a miss your current moves to plan your next
-                    Sprite(miss,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
+                    Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "z": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
+                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "x": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
+                    Sprite(ship,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
 
 
 
