@@ -102,7 +102,7 @@ def mouseClick(event):
     else:
         x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
         y_location = (event.y) // CELL_SIZE
-        if data['computerboard'][x_location][y_location] == "0": #if empty cell mark as miss
+        if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as miss
             data['computerboard'][x_location][y_location] = "y"
         elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
             data['computerboard'][x_location][y_location] = "z"
