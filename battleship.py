@@ -88,7 +88,6 @@ def mouseClick(event):
         y_location = event.y // CELL_SIZE
         
         if data['pships'] < 3:
-            print('hi',x_location,y_location)
             if data['playerboard'][x_location][y_location] == 0: #if empty cell mark as ship
                 data['playerboard'][x_location][y_location] = "x"
                 data['pships'] += 1
