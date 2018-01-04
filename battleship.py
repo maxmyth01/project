@@ -10,7 +10,8 @@ from random import randint
 #constants and colors
 ROWS = 5
 COLS = 5
-CELL_SIZE = 20
+CELL_SIZE = 50
+BOARD_SEPARATE = 500
 black = Color(0x000000,1)
 white = Color(0xFFFFFF,1)
 gray = Color(0xD3D3D3,1)
@@ -37,17 +38,17 @@ def redrawAll():
     for z in range (0,2):
         for col in range(0,COLS):
             for row in range(0,ROWS):
-                Sprite(square,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                Sprite(square,(row*CELL_SIZE +(BOARD_SEPARATE*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "x": #print a ship on your board so you can see the computers move
-                    Sprite(ship,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
+                    Sprite(ship,(row*CELL_SIZE +(BOARD_SEPARATE*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
                 if z == 0 and data['playerboard'][row][col] == "y": # print a miss
-                    Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                    Sprite(miss,(row*CELL_SIZE +(BOARD_SEPARATE*z),col*CELL_SIZE))
                 if z == 0 and data['playerboard'][row][col] == "z": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                    Sprite(hit,(row*CELL_SIZE +(BOARD_SEPARATE*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "y": # print a miss your current moves to plan your next
-                    Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                    Sprite(miss,(row*CELL_SIZE +(BOARD_SEPARATE*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "z": # print a hit
-                    Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
+                    Sprite(hit,(row*CELL_SIZE +(BOARD_SEPARATE*z),col*CELL_SIZE))
 
 
 
@@ -99,7 +100,7 @@ def mouseClick(event):
                 data['placedships'] = True
             
         else:
-            x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
+            x_location = (event.x - BOARD_SEPARATE) // CELL_SIZE # lets user attack enemy board, right side
             y_location = (event.y) // CELL_SIZE
             if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as miss
                 data['computerboard'][x_location][y_location] = "y"
