@@ -1,6 +1,6 @@
 #Max Low
 #12-14-17
-#battleship.py -- battleship game
+#battleship.py -- battleship game, three ships against 3 computer picks randomly
 
 from ggame import *
 from random import randint
@@ -20,7 +20,7 @@ blue = Color(0x0000FF,1)
 
 
 
-def buildBoard():
+def buildBoard():# create the list that maintain the board
     data['board'] = []
     for i in range(0,COLS):
         data['board'].append([0]*ROWS)
@@ -28,14 +28,14 @@ def buildBoard():
 
 
 
-def redrawAll():
+def redrawAll(): # recreaet the board after each action accoding to the state of the lists and sprites graphics
     square = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),blue)
     ship = blueCircle = CircleAsset(0.5*CELL_SIZE,LineStyle(1,black),gray)
     miss = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),white)
     hit  = RectangleAsset(CELL_SIZE,CELL_SIZE,LineStyle(1,black),red)
     for item in App().spritelist[:]:
         item.destroy()
-    for z in range (0,2):
+    for z in range (0,2): #allows for two boards to be created by a seprate distance 
         for col in range(0,COLS):
             for row in range(0,ROWS):
                 Sprite(square,(row*CELL_SIZE +(BOARD_SEPARATE*z),col*CELL_SIZE))
@@ -52,12 +52,12 @@ def redrawAll():
 
 
 
-def pickComputerShips(): # x represents a ship
+def pickComputerShips(): # x represents a ship in the list
     data['cships'] =0 
     while data['cships'] < 3:
         rand1 = randint(0,COLS-1)
-        rand2 = randint(0,ROWS-1)
-        if data['computerboard'][rand1][rand2] != "x":
+        rand2 = randint(0,ROWS-1) #random placement of computer ships
+        if data['computerboard'][rand1][rand2] != "x": #prevents repeats
             data['computerboard'][rand1][rand2] = "x"
             data['cships'] += 1
         
@@ -68,15 +68,15 @@ def computerTurn(): # y represents a miss, z is a hit
         while True:
             rand1 = randint(0,COLS-1)
             rand2 = randint(0,ROWS-1)
-            if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
+            if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z": # prevents placing another shot on existing misses and hits
                 if data['playerboard'][rand1][rand2] == 0:
                     data['playerboard'][rand1][rand2] = "y"
                     break
                 else:
                     data['pships'] -= 1
-                    if data['pships'] == 0:
+                    if data['pships'] == 0:# check to see if the player is out of ship and they lose
                         print("The Computer wins!")
-                        data['end'] = True
+                        data['end'] = True 
                     data['playerboard'][rand1][rand2] = "z"
                     break
         redrawAll()
