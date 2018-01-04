@@ -63,58 +63,60 @@ def pickComputerShips(): # x represents a ship
     
 
 def computerTurn(): # y represents a miss, z is a hit
-    while True:
-        rand1 = randint(0,COLS-1)
-        rand2 = randint(0,ROWS-1)
-        if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
-            if data['playerboard'][rand1][rand2] == 0:
-                data['playerboard'][rand1][rand2] = "y"
-                break
-            else:
-                data['pships'] -= 1
-                if data['pships'] == 0:
-                    print("The Computer wins!")
-                data['playerboard'][rand1][rand2] = "z"
-                break
-    redrawAll()
+    if data['end'] == False:
+        while True:
+            rand1 = randint(0,COLS-1)
+            rand2 = randint(0,ROWS-1)
+            if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
+                if data['playerboard'][rand1][rand2] == 0:
+                    data['playerboard'][rand1][rand2] = "y"
+                    break
+                else:
+                    data['pships'] -= 1
+                    if data['pships'] == 0:
+                        print("The Computer wins!")
+                        data['end'] = True
+                    data['playerboard'][rand1][rand2] = "z"
+                    break
+        redrawAll()
     
     
     
 def mouseClick(event):
-    
-    
-    if data['placedships'] == False:
-        x_location = event.x // CELL_SIZE # lets user place their ships on their board, left side
-        y_location = event.y // CELL_SIZE
-        
-        if data['pships'] < 3:
-            if data['playerboard'][x_location][y_location] == 0: #if empty cell mark as ship
-                data['playerboard'][x_location][y_location] = "x"
-                data['pships'] += 1
-                redrawAll()
-            elif data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
-                print("INVALID MOVE, GO AGAIN")
-        if data['pships'] == 3: 
-            data['placedships'] = True
-        
-    else:
-        x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
-        y_location = (event.y) // CELL_SIZE
-        if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as miss
-            data['computerboard'][x_location][y_location] = "y"
-        elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
-            data['computerboard'][x_location][y_location] = "z"
-            data['cships'] -= 1
+    if data['end'] == False:
+        if data['placedships'] == False:
+            x_location = event.x // CELL_SIZE # lets user place their ships on their board, left side
+            y_location = event.y // CELL_SIZE
             
-        elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location] == "y":
-            print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
+            if data['pships'] < 3:
+                if data['playerboard'][x_location][y_location] == 0: #if empty cell mark as ship
+                    data['playerboard'][x_location][y_location] = "x"
+                    data['pships'] += 1
+                    redrawAll()
+                elif data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
+                    print("INVALID MOVE, GO AGAIN")
+            if data['pships'] == 3: 
+                data['placedships'] = True
+            
         else:
-            print("INVALID MOVE, OUT OF RANGE")
-        redrawAll()
-        #after your turn checks if you won
-        if data['cships'] == 0:
-            print("The player wins!")
-        computerTurn()
+            x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
+            y_location = (event.y) // CELL_SIZE
+            if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as miss
+                data['computerboard'][x_location][y_location] = "y"
+            elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
+                data['computerboard'][x_location][y_location] = "z"
+                data['cships'] -= 1
+                
+            elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location] == "y":
+                print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
+            else:
+                print("INVALID MOVE, OUT OF RANGE")
+            redrawAll()
+            #after your turn checks if you won
+            if data['cships'] == 0:
+                print("The player wins!")
+                data['end'] = True
+            computerTurn()
         
 
 if __name__ == '__main__':
@@ -127,6 +129,7 @@ if __name__ == '__main__':
     data['placedships'] = False
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
+    data['end'] = False
   
     redrawAll()
     pickComputerShips()
