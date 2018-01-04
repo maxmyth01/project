@@ -108,7 +108,8 @@ def mouseClick(event):
                 data['computerboard'][x_location][y_location] = "z"
                 data['cships'] -= 1
             elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location] == "y":
-                print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
+                print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE")
+                data['sucessful_shot'] = False
             else:
                 print("INVALID MOVE, OUT OF RANGE")
                 data['sucessful_shot'] = False
@@ -118,8 +119,9 @@ def mouseClick(event):
                 print("The player wins!")
                 data['end'] = True
                 
-            if data['sucessful_shot'] = True: # checks to see that the person sucessful shot before allowing computer turn
+            if data['sucessful_shot'] == True: # checks to see that the person sucessful shot before allowing computer turn
                 computerTurn()
+            data['sucessful_shot'] = True #reset for next turn
         
 
 if __name__ == '__main__':
