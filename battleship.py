@@ -65,11 +65,14 @@ def pickComputerShips(): # x represents a ship
     
 
 def computerTurn(): # y represents a miss, z is a hit
-    while False:
-        print('max')
+    print('are we here?')
+    while True:
+        
         rand1 = randint(0,COLS-1)
         rand2 = randint(0,ROWS-1)
+        print('max', rand1, rand2)
         if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
+            print('max', rand1, rand2)
             if data['playerboard'][rand1][rand2] == 0:
                 data['playerboard'][rand1][rand2] = "y"
                 data['pships'] -= 1
