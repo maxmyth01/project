@@ -107,17 +107,19 @@ def mouseClick(event):
             elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
                 data['computerboard'][x_location][y_location] = "z"
                 data['cships'] -= 1
-                
             elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location] == "y":
                 print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
             else:
                 print("INVALID MOVE, OUT OF RANGE")
+                data['sucessful_shot'] = False
             redrawAll()
-            #after your turn checks if you won
+            #after your turn checks if you won and to end the game, if not end allows computer to play
             if data['cships'] == 0:
                 print("The player wins!")
                 data['end'] = True
-            computerTurn()
+                
+            if data['sucessful_shot'] = True: # checks to see that the person sucessful shot before allowing computer turn
+                computerTurn()
         
 
 if __name__ == '__main__':
@@ -130,6 +132,7 @@ if __name__ == '__main__':
     data['placedships'] = False
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
+    data['sucessful_shot'] = True
     data['end'] = False
   
     redrawAll()
