@@ -72,13 +72,16 @@ def computerTurn(): # y represents a miss, z is a hit
             if data['playerboard'][rand1][rand2] == 0:
                 print('max', rand1, rand2)
                 data['playerboard'][rand1][rand2] = "y"
-                data['pships'] -= 1
-                break
+                print (data['playerboard'][rand1][rand2])
+                print (data['playerboard'])
+                data['playerboard'][rand1][rand2] = "y"
             else:
+                data['pships'] -= 1
+                if data['pships'] == 0:
+                    print("The Computer wins!")
+                    break
                 data['playerboard'][rand1][rand2] = "z"
-                break
-    if data['pships'] == 0:
-        print("The Computer wins!")
+    
     
     
     
