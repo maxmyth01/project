@@ -65,15 +65,12 @@ def pickComputerShips(): # x represents a ship
     
 
 def computerTurn(): # y represents a miss, z is a hit
-    print('are we here?')
     while True:
-        
         rand1 = randint(0,COLS-1)
         rand2 = randint(0,ROWS-1)
-        print('max', rand1, rand2)
         if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
-            print('max', rand1, rand2)
             if data['playerboard'][rand1][rand2] == 0:
+                print('max', rand1, rand2)
                 data['playerboard'][rand1][rand2] = "y"
                 data['pships'] -= 1
                 break
@@ -125,7 +122,6 @@ def mouseClick(event):
         #after your turn checks if you won
         if data['cships'] == 0:
             print("The player wins!")
-        print("hello? computer")
         computerTurn()
     
     
