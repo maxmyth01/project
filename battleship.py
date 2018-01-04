@@ -72,16 +72,16 @@ def computerTurn(): # y represents a miss, z is a hit
             if data['playerboard'][rand1][rand2] == 0:
                 print('max', rand1, rand2)
                 data['playerboard'][rand1][rand2] = "y"
-                print (data['playerboard'][rand1][rand2])
-                print (data['playerboard'])
                 data['playerboard'][rand1][rand2] = "y"
+                break
             else:
                 data['pships'] -= 1
                 if data['pships'] == 0:
                     print("The Computer wins!")
                     break
                 data['playerboard'][rand1][rand2] = "z"
-    
+                break
+    redrawAll()
     
     
     
@@ -108,7 +108,6 @@ def mouseClick(event):
     else:
         x_location = (event.x - 200) // CELL_SIZE # lets user attack enemy board, right side
         y_location = (event.y) // CELL_SIZE
-        print('hi',x_location,y_location)
         if data['computerboard'][x_location][y_location] == 0: #if empty cell mark as miss
             data['computerboard'][x_location][y_location] = "y"
         elif data['computerboard'][x_location][y_location] == "x": #if ship mark as hit
@@ -126,6 +125,7 @@ def mouseClick(event):
         if data['cships'] == 0:
             print("The player wins!")
         computerTurn()
+        
     
     
 
