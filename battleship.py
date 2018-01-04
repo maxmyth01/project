@@ -48,8 +48,6 @@ def redrawAll():
                     Sprite(miss,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
                 if z == 1 and data['computerboard'][row][col] == "z": # print a hit
                     Sprite(hit,(row*CELL_SIZE +(200*z),col*CELL_SIZE))
-                if z == 1 and data['computerboard'][row][col] == "x": # helping code
-                    Sprite(ship,(row*CELL_SIZE +(200*z)+(0.5*CELL_SIZE),col*CELL_SIZE+(0.5*CELL_SIZE)))
 
 
 
@@ -114,7 +112,7 @@ def mouseClick(event):
             data['computerboard'][x_location][y_location] = "z"
             data['cships'] -= 1
             
-        elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location0] == "y":
+        elif data['computerboard'][x_location][y_location] == "z" or data['computerboard'][x_location][y_location] == "y":
             print("INVALID MOVE, GO AGAIN, ALREADY SELECTED TILE") 
         else:
             print("INVALID MOVE, OUT OF RANGE")
