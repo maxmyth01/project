@@ -68,15 +68,12 @@ def computerTurn(): # y represents a miss, z is a hit
         rand2 = randint(0,ROWS-1)
         if data['playerboard'][rand1][rand2] != "y" and data['playerboard'][rand1][rand2] != "z":
             if data['playerboard'][rand1][rand2] == 0:
-                print('max', rand1, rand2)
-                data['playerboard'][rand1][rand2] = "y"
                 data['playerboard'][rand1][rand2] = "y"
                 break
             else:
                 data['pships'] -= 1
                 if data['pships'] == 0:
                     print("The Computer wins!")
-                    break
                 data['playerboard'][rand1][rand2] = "z"
                 break
     redrawAll()
@@ -96,8 +93,6 @@ def mouseClick(event):
                 data['playerboard'][x_location][y_location] = "x"
                 data['pships'] += 1
                 redrawAll()
-                print(data['playerboard'])
-                print(data['computerboard'])
             elif data['computerboard'][x_location][y_location] == "x": #if already a ship do nothing
                 print("INVALID MOVE, GO AGAIN")
         if data['pships'] == 3: 
@@ -117,19 +112,13 @@ def mouseClick(event):
         else:
             print("INVALID MOVE, OUT OF RANGE")
         redrawAll()
-        print(data['playerboard'])
-        print(data['computerboard'])
         #after your turn checks if you won
         if data['cships'] == 0:
             print("The player wins!")
         computerTurn()
         
-    
-    
 
-    
 if __name__ == '__main__':
-    
     data = {}
     data['board'] = []
     data['playerboard'] = []
@@ -137,17 +126,11 @@ if __name__ == '__main__':
     data['cships'] =0
     data['pships'] =0
     data['placedships'] = False
-
     data['playerboard'] = buildBoard()
     data['computerboard'] = buildBoard()
   
     redrawAll()
     pickComputerShips()
 
-    print(data['playerboard'])
-    print(data['computerboard'])
-
-    
     App().listenMouseEvent('click', mouseClick)
-    
     App().run()
